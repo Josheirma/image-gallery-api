@@ -34,6 +34,7 @@ const categories = [
     route: "category/art5",
   },
 ];
+
 const Directory = () => {
   return (
     <div>

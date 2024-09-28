@@ -1,4 +1,4 @@
-import { useNavigate, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Body, DirectoryItemContainer } from "./images-styles";
 
 const Images = ({ category }) => {

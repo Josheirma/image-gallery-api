@@ -1,9 +1,7 @@
 import { DropDown } from "./panel-styles";
-import { useState } from "react";
 
 
 function Panel({category}) {
-  const [items, setItems] = useState([]);
   return (
     <div>
       <DropDown>
@@ -13,9 +11,9 @@ function Panel({category}) {
              <div key={index}>
                 <p>{item.name1}</p>
                 <br></br>
-                <img src={item.imageUrl} width="100" height="106" />
+                <img src={item.imageUrl} width="100" height="106" alt = {``} />
                 <p>${item.price}.00</p>
-                <p>{item.amtstars}</p>
+                <p>{item.amtstars}</p> 
                 <p>----</p>
               </div>
             ))}
@@ -24,4 +22,5 @@ function Panel({category}) {
     </div>
   );
 }
+
 export default Panel;

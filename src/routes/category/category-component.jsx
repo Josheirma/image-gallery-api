@@ -35,9 +35,7 @@ export default function Category() {
   let [showPanel, setShowPanel] = useState(false);
   //amount of cjecks is what was selected from that interface
   const setPanelInfo = (amtountOfChecks, product) => {
-    let panelInformationListLeftElements = [];
-    let panelArrayWithDeletedElement = [];
-    if (amtountOfChecks == 1) {
+  if (amtountOfChecks === 1) {
       setPanelElement(
         product.id,
         product.name,
@@ -50,7 +48,7 @@ export default function Category() {
         product.category,
         "One Check"
       );
-    } else if (amtountOfChecks == 2) {
+    } else if (amtountOfChecks === 2) {
       setPanelElement(
         product.id,
         product.name,
@@ -63,7 +61,7 @@ export default function Category() {
         product.category,
         "Two Checks"
       );
-    } else if (amtountOfChecks == 3) {
+    } else if (amtountOfChecks === 3) {
       setPanelElement(
         product.id,
         product.name,
@@ -76,7 +74,7 @@ export default function Category() {
         product.category,
         "Three Checks"
       );
-    } else if (amtountOfChecks == 4) {
+    } else if (amtountOfChecks === 4) {
       setPanelElement(
         product.id,
         product.name,
@@ -91,7 +89,7 @@ export default function Category() {
       );
     } else {
       let arrayWithoutElement = panelInformation.filter(
-        (panelElement) => panelElement.id != product.id
+        (panelElement) => panelElement.id !== product.id
       );
       setPanelInformation(arrayWithoutElement);
       localStorage.setItem(`panel`, JSON.stringify(arrayWithoutElement));
@@ -101,9 +99,7 @@ export default function Category() {
   
   //keep art pieces organized using there id for panel
   function redistributeTheIds(id, panelInformation) {
-    let currentid = -1;
-    let missingIDIndex = -1;
-    let arrayOfIDS = [];
+   let arrayOfIDS = [];
     for (let i = 0; i < panelInformation.length; i++) {
       let IDVariable = panelInformation[i].id;
       arrayOfIDS[i] = IDVariable;
@@ -142,7 +138,7 @@ export default function Category() {
       (panelElement) => panelElement.id === id
     );
     //there are no elements in array for panel with this new info
-    if (panelInformation2.length == 0) {
+    if (panelInformation2.length === 0) {
       let arrayFOrPanel = [...panelInformation, panelInformationElementToAdd];
       setPanelInformation(arrayFOrPanel);
       localStorage.setItem(`panel`, JSON.stringify(arrayFOrPanel));
@@ -175,8 +171,7 @@ export default function Category() {
   //makes display ordered by index using elements id
   const advanceToNextID = (productIDToAdvance) => {
     let index = 0
-    let j = 1
-    while (productIDToAdvance != products[index].id ){
+    while (productIDToAdvance !== products[index].id ){
     index++
     }
     return index
@@ -185,7 +180,6 @@ export default function Category() {
   const computeChecks = (e, indexOfCheckBoxes, howManyChecked, product) => {
     let productIndex = advanceToNextID(product.id)
     let infoArray = [...products];
-    let checked = e.target.checked;
     let amtStars = 0;
     //index of four stars satring at zero
     indexOfCheckBoxes = indexOfCheckBoxes - 1;
@@ -200,14 +194,14 @@ export default function Category() {
     if (indexOfCheckBoxes === 0) {
       //all check boxes start as false
       //if there is a check on second box and than box one is checked, the check will result in box one being checked
-      if (infoArray[productIndex].options[1].checked == true) {
+      if (infoArray[productIndex].options[1].checked === true) {
         amtStars = 1;
         setCheckboxes(true, false, false, false, infoArray, productIndex);
       }
       //all check boxes start as false
       //apply check to second box
       //check box one is checked and than index checks one.  so, results in no checks
-      else if (infoArray[productIndex].options[0].checked == true) {
+      else if (infoArray[productIndex].options[0].checked === true) {
         amtStars = 0;
         setCheckboxes(false, false, false, false, infoArray, productIndex);
       } else {
@@ -221,7 +215,7 @@ export default function Category() {
     //check boxes start all false
     //apply check to second box
     if (indexOfCheckBoxes === 1) {
-      if (infoArray[productIndex].options[2].checked == true) {
+      if (infoArray[productIndex].options[2].checked === true) {
        // product.id = product.id - 1;
         amtStars = 2;
         //all check boxes start as false
@@ -230,7 +224,7 @@ export default function Category() {
       }
       //all check boxes start as false
       //if second box is false and box two is than starred, there will be two stars
-      else if (infoArray[productIndex].options[1].checked == false) {
+      else if (infoArray[productIndex].options[1].checked === false) {
         amtStars = 2;
         setCheckboxes(true, true, false, false, infoArray, productIndex);
       }
@@ -249,13 +243,13 @@ export default function Category() {
       //if box four is checked, and three is checked with index, there will be three checks
       if (infoArray[productIndex]
         
-        .options[3].checked == true) {
+        .options[3].checked === true) {
         amtStars = 3;
         setCheckboxes(true, true, true, false, infoArray, productIndex);
       }
       //all check boxes start as false
       //if box three is checked and index is applied with third box, all false
-      else if (infoArray[productIndex].options[2].checked == true) {
+      else if (infoArray[productIndex].options[2].checked === true) {
         amtStars = 0;
         setCheckboxes(false, false, false, false, infoArray, productIndex);
       } else {
@@ -271,7 +265,7 @@ export default function Category() {
     if (indexOfCheckBoxes === 3) {
       //all check boxes start as false
       //index is three so will be all stars, all stars with last element checked with index will be all false
-      if (infoArray[productIndex].options[3].checked == true) {
+      if (infoArray[productIndex].options[3].checked === true) {
         amtStars = 0;
         setCheckboxes(false, false, false, false, infoArray, productIndex);
       }
@@ -283,7 +277,6 @@ export default function Category() {
       }
     }
     setProducts(infoArray);
-    let var1 = JSON.parse(localStorage.getItem("products"));
     setPanelInfo(amtStars, product);
     localStorage.setItem(`products`, JSON.stringify(infoArray));
   };

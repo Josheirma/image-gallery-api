@@ -98,7 +98,7 @@ export default function Category() {
 
   
   //keep art pieces organized using there id for panel
-  function redistributeTheIds(id, panelInformation) {
+  function redistributeTheIds(panelInformation) {
    let arrayOfIDS = [];
     for (let i = 0; i < panelInformation.length; i++) {
       let IDVariable = panelInformation[i].id;
@@ -146,7 +146,7 @@ export default function Category() {
       ///there is an element with this check, and stars have changed
       let arrayOfIDs = [];
       const panelInformationChanged = panelInformation.map((pan, index) => {
-        arrayOfIDs = redistributeTheIds(id, panelInformation);
+        arrayOfIDs = redistributeTheIds(panelInformation);
         let indexOfElement = arrayOfIDs[index];
         if (indexOfElement === id) {
           return panelInformationElementToAdd;

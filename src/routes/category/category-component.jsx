@@ -169,7 +169,7 @@ export default function Category() {
   };
 
   //makes display ordered by index using elements id
-  const advanceToNextID = (productIDToAdvance) => {
+  const getIndexfromProductID = (productIDToAdvance) => {
     let index = 0
     while (productIDToAdvance !== products[index].id ){
     index++
@@ -178,7 +178,7 @@ export default function Category() {
   }
 
   const computeChecks = (e, indexOfCheckBoxes, howManyChecked, product) => {
-    let productIndex = advanceToNextID(product.id)
+    let productIndex = getIndexfromProductID(product.id)
     let infoArray = [...products];
     let amtStars = 0;
     //index of four stars satring at zero

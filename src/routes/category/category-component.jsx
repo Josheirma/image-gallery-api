@@ -143,7 +143,7 @@ export default function Category() {
       setPanelInformation(arrayFOrPanel);
       localStorage.setItem(`panel`, JSON.stringify(arrayFOrPanel));
     } else {
-      ///there is an element with this check, and stars have changed
+      ///there is an element with this check, and checks have changed
       let arrayOfIDs = [];
       const panelInformationChanged = panelInformation.map((pan, index) => {
         arrayOfIDs = redistributeTheIds(panelInformation);

@@ -11,11 +11,12 @@ import './category-styles.css';
 //Two questions for Ingrid:  how would I change directory-component.jsx page to static and how would I change art-piece-component to responsive?
 
 export default function Category() {
-  let artPiecesOfCategoryArray = [];
+  let [panelInformation, setPanelInformation] = useState([]);
+  let [showPanel, setShowPanel] = useState(false);
   const route = useParams();
   let imageCategoryToShow = route.category;
   let [products, setProducts] = useState(ART);
-  artPiecesOfCategoryArray = products.filter(
+  let artPiecesOfCategoryArray = products.filter(
     (element) => element.category === imageCategoryToShow
   );
   useEffect(() => {
@@ -30,71 +31,68 @@ export default function Category() {
   }, []);
   const onComplete = after(products.length, () => {
   });
-  let [panelInformation, setPanelInformation] = useState([]);
-  useEffect(() => {}, []);
-  let [showPanel, setShowPanel] = useState(false);
-  //amount of cjecks is what was selected from that interface
-  const setPanelInfo = (amtountOfChecks, product) => {
-  if (amtountOfChecks === 1) {
-      setPanelElement(
-        product.id,
-        product.name,
-        product.imageUrl,
-        product.price,
-        true,
-        false,
-        false,
-        false,
-        product.category,
-        "One Check"
-      );
-    } else if (amtountOfChecks === 2) {
-      setPanelElement(
-        product.id,
-        product.name,
-        product.imageUrl,
-        product.price,
-        true,
-        false,
-        false,
-        false,
-        product.category,
-        "Two Checks"
-      );
-    } else if (amtountOfChecks === 3) {
-      setPanelElement(
-        product.id,
-        product.name,
-        product.imageUrl,
-        product.price,
-        true,
-        false,
-        false,
-        false,
-        product.category,
-        "Three Checks"
-      );
-    } else if (amtountOfChecks === 4) {
-      setPanelElement(
-        product.id,
-        product.name,
-        product.imageUrl,
-        product.price,
-        true,
-        false,
-        false,
-        false,
-        product.category,
-        "Four Checks"
-      );
-    } else {
+  
+ 
+  //@@@@@@@@@@@@@@@@@@@
+  //use an object to pass into setPanelElement?!?!
+ 
+  const updatePanelInfo = (amtountOfChecks, product) => {
+
+    let Check1, Check2, Check3, Check4 
+    let checkString = "!" 
+    switch(amtountOfChecks){
+    case 1:
+        Check1 = true
+        Check2 = false
+        Check3 = false
+        Check4 = false
+        checkString = "One Check"
+      break
+    case 2:
+        Check1 = true
+        Check2 = false
+        Check3 = false
+        Check4 = false
+        checkString = "Two Checks"
+      break
+    case 3:
+        Check1 = true
+        Check2 = false
+        Check3 = false
+        Check4 = false
+        checkString = "Three Checks"
+      break
+    case 4: 
+        Check1 = true
+        Check2 = false
+        Check3 = false
+        Check4 = false
+        checkString = "Four Checks"
+    break
+    default:
       let arrayWithoutElement = panelInformation.filter(
         (panelElement) => panelElement.id !== product.id
       );
       setPanelInformation(arrayWithoutElement);
-      localStorage.setItem(`panel`, JSON.stringify(arrayWithoutElement));
-    }
-  };
+      localStorage.setItem(`panel`, JSON.stringify(arrayWithoutElement));    
+  
+      
+    };
+
+    setPanelElement(
+      product.id,
+      product.name,
+      product.imageUrl,
+      product.price,
+      Check1,
+      Check2,
+      Check3,
+      Check4,
+      product.category,
+      checkString
+    );
+
+}
 
   
   //keep art pieces organized using there id for panel
@@ -277,7 +275,7 @@ export default function Category() {
       }
     }
     setProducts(infoArray);
-    setPanelInfo(amtStars, product);
+    updatePanelInfo(amtStars, product);
     localStorage.setItem(`products`, JSON.stringify(infoArray));
   };
   return(
@@ -308,5 +306,6 @@ export default function Category() {
 </div>
 
   )
+
 }
  

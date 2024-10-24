@@ -15,6 +15,7 @@ const ART = [
       ],
       category: "art1",
       amtstars: "none",
+      amtstars2: 0 
     },
   
   
@@ -31,6 +32,7 @@ const ART = [
       ],
       category: "art1",
       amtstars: "none",
+      amtstars2: 0 
     },
     
     {
@@ -46,6 +48,7 @@ const ART = [
       ],
       category: "art1",
       amtstars: "none",
+      amtstars2: 0 
     },
     
     {
@@ -61,6 +64,7 @@ const ART = [
       ],
       category: "art2",
       amtstars: "none",
+      amtstars2: 0 
     },
     {
       id: 8,
@@ -75,6 +79,7 @@ const ART = [
       ],
       category: "art2",
       amtstars: "none",
+      amtstars2: 0 
     },
     {
       id: 9,
@@ -89,6 +94,7 @@ const ART = [
       ],
       category: "art2",
       amtstars: "none",
+      amtstars2: 0 
     },
     {
       id: 10,
@@ -103,6 +109,7 @@ const ART = [
       ],
       category: "art3",
       amtstars: "none",
+      amtstars2: 0 
     },
     {
       id: 11,
@@ -117,6 +124,7 @@ const ART = [
       ],
       category: "art3",
       amtstars: "none",
+      amtstars2: 0 
     },
     {
       id: 12,
@@ -131,6 +139,7 @@ const ART = [
       ],
       category: "art3",
       amtstars: "none",
+      amtstars2: 0 
     },
     {
       id: 13,
@@ -145,6 +154,7 @@ const ART = [
       ],
       category: "art3",
       amtstars: "none",
+      amtstars2: 0 
     },
     {
       id: 14,
@@ -159,6 +169,7 @@ const ART = [
       ],
       category: "art3",
       amtstars: "none",
+      amtstars2: 0 
     },
     {
       id: 15,
@@ -173,6 +184,7 @@ const ART = [
       ],
       category: "art3",
       amtstars: "none",
+      amtstars2: 0 
     },
     {
       id: 16,
@@ -184,9 +196,11 @@ const ART = [
         { option: "option2", checked: false },
         { option: "option3", checked: false },
         { option: "option4", checked: false },
+        
       ],
       category: "art4",
       amtstars: "none",
+      amtstars2: 0 
     },
     {
       id: 17,
@@ -201,6 +215,7 @@ const ART = [
       ],
       category: "art4",
       amtstars: "none",
+      amtstars2: 0 
     },
     {
       id: 18,
@@ -215,6 +230,7 @@ const ART = [
       ],
       category: "art4",
       amtstars: "none",
+      amtstars2: 0 
     },
     {
       id: 19,
@@ -229,6 +245,7 @@ const ART = [
       ],
       category: "art5",
       amtstars: "none",
+      amtstars2: 0 
     },
     {
       id: 20,
@@ -243,6 +260,7 @@ const ART = [
       ],
       category: "art5",
       amtstars: "none",
+      amtstars2: 0 
     },
     {
       id: 21,
@@ -257,6 +275,7 @@ const ART = [
       ],
       category: "art5",
       amtstars: "none",
+      amtstars2: 0 
     },
   ];
 

@@ -8,7 +8,8 @@ import ArtPiece from "../../components/art-piece/art-piece-component.jsx";
 import './category-styles.css';
 
 
-//Two questions for Ingrid:  how would I change directory-component.jsx page to static and how would I change art-piece-component to responsive?
+//Two questions for Ingrid:  how would I change directory-component.jsx page so that the images reside off the page, and a scrollbar is needed
+// and how would I change art-piece-component to collapse without the scrollbar
 
 export default function Category() {
   
@@ -37,8 +38,7 @@ export default function Category() {
   //});
 
 
-  //@@@@@@@@@@@@@@@@@@@
-  //use an object to pass into setPanelElement?!?!
+  
  
   const updatePanelInfo = (amtountOfChecks, product) => {
 
@@ -96,7 +96,7 @@ export default function Category() {
       category: product.category,
       amtstars: checkString,
     }]
-      setPanelElement(objectToPass)
+      createPanelElement(objectToPass)
     
     
 
@@ -115,8 +115,10 @@ export default function Category() {
   }
 
 
-  //@@@@@@@@@@@@pass in an object?
-  const setPanelElement = (
+  //@@@@@@@@@@@@pass in an object? - see updatepanel, above
+  //@@@@@@@@@@@@doing it this way means you must always pass in arguments in the exact correct order, where as if you passed in an object, the properties in the object can be in any order.
+  
+  const createPanelElement = (
     id,
     name,
     url,
@@ -167,17 +169,6 @@ export default function Category() {
     }
   };
 
-  //Sets one element of another array with checks
-  const setCheckboxes = (check1, check2, check3, check4, infoArray, id) => {
-    infoArray[id].options[0].checked = check1;
-    infoArray[id].options[1].checked = check2;
-    infoArray[id].options[2].checked = check3;
-    infoArray[id].options[3].checked = check4;
-    return infoArray;
-  };
-
-  
-  
   return(
    
   <div>
@@ -185,13 +176,8 @@ export default function Category() {
     Would you like to rate these works?
     </div>
     <div  className="buttonShow">
-    <button
-      
-      onClick={() => {
-      setShowPanel((showPanel) => !showPanel);
-      }}
-    >
-      Show Panel
+    <button onClick={() => {setShowPanel((showPanel) => !showPanel);}}>
+    {showPanel? 'Hide Panel' : 'Show Panel' }
     </button>
     </div>
     <div className = "artwork-link">
@@ -200,7 +186,7 @@ export default function Category() {
   <CategoryContainer>
   {artPiecesOfCategoryArray.map((product) => (
   // Display artwork in this mapped component
-  <ArtPiece /*key = {product.imageUrl}*/ product = {product} showPanel={showPanel} panelInformation={panelInformation}  products={products} setProducts =  {setProducts} updatePanelInfo = {updatePanelInfo}   />
+  <ArtPiece key = {product.imageUrl} product = {product} showPanel={showPanel} panelInformation={panelInformation}  products={products} setProducts =  {setProducts} updatePanelInfo = {updatePanelInfo}   />
   ))}
   </CategoryContainer>
 </div>

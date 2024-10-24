@@ -5,8 +5,6 @@
         
         
        const ArtPiece = ({product,onComplete,amountStars,showPanel,panelInformation, setShowPanel, products, setProducts, updatePanelInfo}) => {
-        let [index, setIndex] = useState(0)
-        
         //makes display ordered by index using elements id
         const getIndexfromProductID = (productIDToAdvance, products) => {
           let index = 0
@@ -16,9 +14,15 @@
           return index
         }
 
+        
+        const productIDIndex =  getIndexfromProductID(product.id, products)
+        let [indexForChecks, setIndexForChecks] = useState(productIDIndex-1)
+        
+        
+        
 
-        const computeChecks = (indexOfCheckBoxes, howManyChecked, product, products, setProducts, updatePanelInfo, Index) => {
-        setIndex(2)
+        const computeChecks = (howManyChecked, product, products, setProducts, updatePanelInfo) => {
+        setIndexForChecks(indexForChecks++)
         let amtStars = 0
         //if(products[indexOfCheckBoxes].amtstars2 === howManyChecked){
           
@@ -30,8 +34,8 @@
       
         
         let copyProducts = [...products]
-        let indexForID = getIndexfromProductID(2, products) 
-        copyProducts[indexForID].amtstars2 = amtStars
+        let indexForID = indexForChecks//getIndexfromProductID(4, products) 
+        copyProducts[indexForChecks].amtstars2 = amtStars
         //let productObject = [product, amtStars]
       
         setProducts(copyProducts);
@@ -41,7 +45,23 @@
        
 
 
-        //index1++
+      let IsCheck1 = false
+      let IsCheck2 = false
+      let IsCheck3 = false
+      let IsCheck4 = false
+      if(product.amtstars2 >= 1){
+      IsCheck1 = true
+      }
+      if(product.amtstars2 >= 2){
+        IsCheck2 = true
+      }
+      if(product.amtstars2 >= 3){
+        IsCheck3 = true
+      }
+      if(product.amtstars2 >= 4){
+        IsCheck4 = true
+      }
+       
         return (
             <div>
               <>
@@ -58,33 +78,58 @@
                               alt={product.name}
                               width={200}
                             />
+                                
+                                <input
+                                key={product.imageUrl}
+                                checked={IsCheck1}
+                                type={`checkbox`}
+                                //name={newOptIndex}
+                                onChange={() =>
+                                  computeChecks(1, product, products, setProducts, updatePanelInfo)
+                                }
+                              />
+                              <input
+                             
+                              checked={IsCheck2}
+                              type={`checkbox`}
+                              //name={newOptIndex}
+                              onChange={() =>
+                                computeChecks(2, product, products, setProducts, updatePanelInfo)
+                              }
+                              />
+
+                            <input
+                             checked={IsCheck3}
+                             type={`checkbox`}
+                             //name={newOptIndex}
+                             onChange={() =>
+                               computeChecks(3, product, products, setProducts, updatePanelInfo)
+                             }
+                             />
+                             <input
+                             checked={IsCheck4}
+                             type={`checkbox`}
+                             //name={newOptIndex}
+                             onChange={() =>
+                               computeChecks(4, product, products, setProducts, updatePanelInfo)
+                             }
+                             />
                           </div>
                         </div>
                         <div>
 
                           {}
                          
-                          {product.options.map((opt, optIndex) => {
+                          {products.map((product) => {
                             
-                            let newOptIndex = optIndex + 1;
-                            let ISStar = false
-                            if(product.amtstars2 <= index){
-                              ISStar = true
-                              //index1++
-                            }else{
-                              ISStar = false
-                            }
-                            return (
-                              <input
-                                key={optIndex}
-                                checked={ISStar}
-                                type={`checkbox`}
-                                name={newOptIndex}
-                                onChange={() =>
-                                  computeChecks(newOptIndex, newOptIndex, product, products, setProducts, updatePanelInfo, index)
-                                }
-                              />
-                            );
+                            //let newOptIndex = optIndex + 1;
+                            
+                            //return (
+                            //  
+                            //);
+
+
+
                           })}
                           {showPanel && (
                             <Panel

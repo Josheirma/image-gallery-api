@@ -4,7 +4,7 @@
         import {computeChecks} from "../../routes/category/category-component";
         
         
-       const ArtPiece = ({product,onComplete,amountStars,showPanel,panelInformation, setShowPanel, products, setProducts, updatePanelInfo}) => {
+       const ArtPiece = ({product,showPanel,panelInformation, products, setProducts, updatePanelInfo}) => {
         //makes display ordered by index using elements id
         const getIndexfromProductID = (productIDToAdvance, products) => {
           let index = 0
@@ -13,36 +13,25 @@
           }
           return index
         }
-
-        
         const productIDIndex =  getIndexfromProductID(product.id, products)
         let [indexForChecks, setIndexForChecks] = useState(productIDIndex-1)
-        
-        
-        
+
 
         const computeChecks = (howManyChecked, product, products, setProducts, updatePanelInfo) => {
         setIndexForChecks(indexForChecks++)
         let amtStars = 0
         //if(products[indexOfCheckBoxes].amtstars2 === howManyChecked){
-          
         //}
         //else{
           //products[indexOfCheckBoxes].amtstars2 = howManyChecked 
           amtStars = howManyChecked 
         //}
-      
-        
         let copyProducts = [...products]
-        let indexForID = indexForChecks//getIndexfromProductID(4, products) 
         copyProducts[indexForChecks].amtstars2 = amtStars
-        //let productObject = [product, amtStars]
-      
         setProducts(copyProducts);
         updatePanelInfo(product.amtStars, product);
         localStorage.setItem(`products`, JSON.stringify(products));
       }
-       
 
 
       let IsCheck1 = false
@@ -61,8 +50,7 @@
       if(product.amtstars2 >= 4){
         IsCheck4 = true
       }
-       
-        return (
+       return (
             <div>
               <>
                 <div key={product.imageUrl}>
@@ -73,35 +61,30 @@
                             <img
                               type="Image"
                               src={product.imageUrl}
-                              onLoad={onComplete}
-                              onError={onComplete}
+                              //onLoad={onComplete}
+                              //onError={onComplete}
                               alt={product.name}
                               width={200}
                             />
-                                
                                 <input
                                 key={product.imageUrl}
                                 checked={IsCheck1}
                                 type={`checkbox`}
-                                //name={newOptIndex}
+                               
                                 onChange={() =>
                                   computeChecks(1, product, products, setProducts, updatePanelInfo)
                                 }
                               />
                               <input
-                             
                               checked={IsCheck2}
                               type={`checkbox`}
-                              //name={newOptIndex}
                               onChange={() =>
                                 computeChecks(2, product, products, setProducts, updatePanelInfo)
                               }
                               />
-
                             <input
                              checked={IsCheck3}
                              type={`checkbox`}
-                             //name={newOptIndex}
                              onChange={() =>
                                computeChecks(3, product, products, setProducts, updatePanelInfo)
                              }
@@ -109,7 +92,6 @@
                              <input
                              checked={IsCheck4}
                              type={`checkbox`}
-                             //name={newOptIndex}
                              onChange={() =>
                                computeChecks(4, product, products, setProducts, updatePanelInfo)
                              }
@@ -117,23 +99,9 @@
                           </div>
                         </div>
                         <div>
-
-                          {}
-                         
-                          {products.map((product) => {
-                            
-                            //let newOptIndex = optIndex + 1;
-                            
-                            //return (
-                            //  
-                            //);
-
-
-
-                          })}
-                          {showPanel && (
+                            {showPanel && (
                             <Panel
-                              key={panelInformation.id}
+                              //key={panelInformation.id}
                               category={panelInformation}
                             />
                           )}
@@ -142,8 +110,5 @@
                 </>
             </div>
           );
-            
-          
-          }
-
-          export default ArtPiece
+        }
+        export default ArtPiece

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { CategoryContainer } from "./category-styles";
 import { useParams } from "react-router-dom";
-import { after } from "underscore";
+//import { after } from "underscore";
 import { NavLink } from "../navigation/navigation-styles";
 import {ART}  from "../../assets/ART_DATA.js"
 import ArtPiece from "../../components/art-piece/art-piece-component.jsx";
@@ -33,11 +33,10 @@ export default function Category() {
     }
   }, []);
 
-  const onComplete = after(products.length, () => {
-  });
+  //const onComplete = after(products.length, () => {
+  //});
 
-  
- 
+
   //@@@@@@@@@@@@@@@@@@@
   //use an object to pass into setPanelElement?!?!
  
@@ -115,6 +114,7 @@ export default function Category() {
     return arrayOfIDS;
   }
 
+
   //@@@@@@@@@@@@pass in an object?
   const setPanelElement = (
     id,
@@ -177,7 +177,6 @@ export default function Category() {
   };
 
   
- 
   
   return(
    
@@ -189,8 +188,7 @@ export default function Category() {
     <button
       
       onClick={() => {
-        //
-        setShowPanel((showPanel) => !showPanel);
+      setShowPanel((showPanel) => !showPanel);
       }}
     >
       Show Panel
@@ -202,17 +200,11 @@ export default function Category() {
   <CategoryContainer>
   {artPiecesOfCategoryArray.map((product) => (
   // Display artwork in this mapped component
-  <ArtPiece key = {product.imageUrl} product = {product} onComplete={onComplete} amountOfStars={product.amountstars} showPanel={showPanel} panelInformation={panelInformation} setShowPanel = {setShowPanel}  products={products} setProducts =  {setProducts} updatePanelInfo = {updatePanelInfo}   />
+  <ArtPiece /*key = {product.imageUrl}*/ product = {product} showPanel={showPanel} panelInformation={panelInformation}  products={products} setProducts =  {setProducts} updatePanelInfo = {updatePanelInfo}   />
   ))}
   </CategoryContainer>
 </div>
 
   )
-
-
 }
-
-
-//github, artpeice wrong params, set index and index, 245, trace starin g right above - console.log - 3 spots - save
-
 

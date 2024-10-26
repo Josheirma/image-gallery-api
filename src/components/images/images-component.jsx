@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Body, DirectoryItemContainer } from "./images-styles";
+import { Body, DirectoryItemContainer, Img } from "./images-styles";
 
 const Images = ({ category }) => {
   let { imageUrl, route } = category;
@@ -7,7 +7,7 @@ const Images = ({ category }) => {
     <NavLink to={route}>
     <DirectoryItemContainer>
       <Body>
-        <img src={imageUrl} alt={``} />
+        <Img src={imageUrl} alt={``} />
        </Body>
     </DirectoryItemContainer>
     </NavLink>

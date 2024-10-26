@@ -4,6 +4,9 @@ export const DirectoryContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-around;
-  flex-wrap: wrap;
+  
   padding-top: 1rem;
+  overflow: hidden;
+  flex-shrink:0;
+
 `;

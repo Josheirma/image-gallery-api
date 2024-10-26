@@ -1,9 +1,19 @@
+.page-container{
+
+    width:100%;
+    min-width: 800px;
+   
+   
+}
 
 .artwork-title {
     font-size:large;
     margin-top:4rem;
     margin-bottom:3rem;
+    margin-right:2rem;
+    margin-left:2rem;
     text-align: center;
+    width:50%;
     
 }
 
@@ -12,7 +22,9 @@
     margin-top:2rem;
     margin-bottom:2rem;
     text-align: center;
-    
+    width:50%;
+    margin-right:2rem;
+    margin-left:2rem;
     
 }
 
@@ -27,5 +39,12 @@
 
 .buttonShow{
     text-align: center;
+    width:50%;
+    margin-right:2rem;
+    margin-left:2rem;
    
+}
+
+img{
+    
 }

@@ -7,7 +7,7 @@
 }
 
 .artwork-title {
-    font-size:large;
+    font-size:x-large;
     margin-top:4rem;
     margin-bottom:3rem;
     margin-right:2rem;
@@ -18,7 +18,7 @@
 }
 
 .artwork-link {
-    font-size:large;
+    font-size:x-large;
     margin-top:2rem;
     margin-bottom:2rem;
     text-align: center;
@@ -37,13 +37,8 @@
 
 }
 
-.buttonShow{
-    text-align: center;
-    width:50%;
-    margin-right:2rem;
-    margin-left:2rem;
-   
-}
+
+
 
 img{
     

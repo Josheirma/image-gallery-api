@@ -24,7 +24,7 @@ const ArtPiece = ({
       return product;
     });
     setProducts(updatedProducts);
-    updatePanelInfo(product.amtStars, product);
+    updatePanelInfo(product.amtstars2, product);
     localStorage.setItem(`products`, JSON.stringify(products));
   };
    return (

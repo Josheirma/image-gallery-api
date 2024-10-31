@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { CategoryContainer } from "./category-styles";
+import { CategoryContainer, ButtonShow, ButtonContainer } from "./category-styles";
 import { useParams } from "react-router-dom";
 import { NavLink } from "../navigation/navigation-styles";
 import { ART } from "../../assets/ART_DATA.js";
@@ -114,7 +114,7 @@ export default function Category() {
       option3,
       option4,
       category,
-      amountstars,
+      amtstars,
     } = objectIn;
 
     //***************NOT UNDERSTANDING THIS!*************
@@ -147,7 +147,7 @@ export default function Category() {
         { option: "option4", checked: option4 },
       ],
       category: category,
-      amtstars: amountstars,
+      amtstars: amtstars,
     };
     //keeps only element with the id, if this has length of zero, than this element is not in array
     let element = panelInformation.filter(
@@ -180,18 +180,23 @@ export default function Category() {
   };
 
   return (
-    <div className="page-container">
-      <div className="artwork-title">Would you like to rate these works?</div>
-      <div className="buttonShow">
-        <button
+    <div class="page-container">
+      <div class = "artwork-title">Would you like to rate these works?</div>
+      
+      
+      <ButtonContainer >
+        <ButtonShow
           onClick={() => {
             setShowPanel((showPanel) => !showPanel);
           }}
-        >
-          {showPanel ? "Hide Panel" : "Show Panel"}
-        </button>
-      </div>
-      <div className="artwork-link">
+          
+          >
+            {showPanel ? "Hide Panel" : "Show Panel"}
+        </ButtonShow>
+      </ButtonContainer>
+
+
+      <div class="artwork-link">
         <NavLink to="/">Home Page</NavLink>
       </div>
       <CategoryContainer>

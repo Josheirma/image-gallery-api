@@ -1,16 +1,13 @@
-
-.wholeScreen{
-
-    width: 100%;
-    
+input{
+    transform: scale(2.0);
+    width:.7rem;
+    height:3rem;
+    margin:.5rem
 }
+
 
 img {
    width:100%
     
 }
 
-.imagesandboxes{
-   
-
-}

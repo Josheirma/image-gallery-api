@@ -7,7 +7,7 @@ const Images = ({ category }) => {
     <NavLink to={route}>
     <DirectoryItemContainer>
       <Body>
-        <Img src={imageUrl} alt={``} />
+        <img src={imageUrl} alt={``} />
        </Body>
     </DirectoryItemContainer>
     </NavLink>

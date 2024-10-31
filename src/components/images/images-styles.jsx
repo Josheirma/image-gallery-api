@@ -13,8 +13,8 @@ export const Body = styled.div`
 
 export const DirectoryItemContainer = styled.div``;
 
-export const Img = styled.img`
-width:200px;
-
-`; 
+//export const Img = styled.img`
+//width:200px;
+//
+//`; 
 

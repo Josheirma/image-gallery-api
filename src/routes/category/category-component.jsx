@@ -1,32 +1,13 @@
 import { useState, useEffect } from "react";
 import { CategoryContainer } from "./category-styles";
 import { useParams } from "react-router-dom";
-//import { after } from "underscore";
 import { NavLink } from "../navigation/navigation-styles";
-import {ART}  from "../../assets/ART_DATA.js"
+import { ART } from "../../assets/ART_DATA.js";
 import ArtPiece from "../../components/art-piece/art-piece-component.jsx";
-import './category-styles.css';
-
-//6
-//@@@@@Two questions for Ingrid:  how would I change directory-component.jsx page so that the images reside off the page instaed of another row
-//css : 
-//@@@@and how would I change art-piece-component to continue on the next rows when browser reduces - its a grid
-
-//10 - look over rest again!!
-//9
-//@@@@@@@@ catagory- min width for categories
-//5
-//@@@@@@@@@ after that major javascript revision, what else is important
-//optional chaning, destructure nullish coalesceing operator (??)
-//most major additions afte es6
-//@@@@@@@@  are most sites non-respondive because phones great resolution
-//(smaller browser size cuts off excess page) insted of force componnet to next row
-//7
-//@@@@@@ how is horizontal scrollbar implemented for smaller page, is it ever automatic, especially on smart phones
+import "./category-styles.css";
 
 export default function Category() {
-  
-  let artPiecesOfCategoryArray = []
+  let artPiecesOfCategoryArray = [];
   let [showPanel, setShowPanel] = useState(false);
   let [panelInformation, setPanelInformation] = useState([]);
   const route = useParams();
@@ -38,10 +19,10 @@ export default function Category() {
   artPiecesOfCategoryArray = products.filter(
     (element) => element.category === imageCategoryToShow
   );
-  
+
   useEffect(() => {
     // get any products in locals torage for both products and panel - just on first render
-   const productsArrayStored = JSON.parse(localStorage.getItem("products"));
+    const productsArrayStored = JSON.parse(localStorage.getItem("products"));
     const panelsArrayStored = JSON.parse(localStorage.getItem("panel"));
     //if in local storage, set to products and panel
     if (productsArrayStored) {
@@ -56,56 +37,49 @@ export default function Category() {
   //const onComplete = after(products.length, () => {
   //});
 
-
-  
- //get data for createpanelelement
+  //get data for createpanelelement
   const updatePanelInfo = (amtountOfChecks, product) => {
-
-    let Check1, Check2, Check3, Check4 
-    let checkString = "!" 
-    switch(amtountOfChecks){
-    case 1:
-        Check1 = true
-        Check2 = false
-        Check3 = false
-        Check4 = false
-        checkString = "One Check"
-      break
-    case 2:
-        Check1 = true
-        Check2 = false
-        Check3 = false
-        Check4 = false
-        checkString = "Two Checks"
-      break
-    case 3:
-        Check1 = true
-        Check2 = false
-        Check3 = false
-        Check4 = false
-        checkString = "Three Checks"
-      break
-    case 4: 
-        Check1 = true
-        Check2 = false
-        Check3 = false
-        Check4 = false
-        checkString = "Four Checks"
-    break
-    //
-    default://this is unfunctional (there is still always at least one check)
-      let arrayWithoutElement = panelInformation.filter(
-        (panelElement) => panelElement.id !== product.id
-      );
-      setPanelInformation(arrayWithoutElement);
-      localStorage.setItem(`panel`, JSON.stringify(arrayWithoutElement));    
-  
-      
-    };
-    //to use with Ingrid
-    let objectToPass =  
-    {
-      id:product.id,
+    let Check1, Check2, Check3, Check4;
+    let checkString = "!";
+    switch (amtountOfChecks) {
+      case 1:
+        Check1 = true;
+        Check2 = false;
+        Check3 = false;
+        Check4 = false;
+        checkString = "One Check";
+        break;
+      case 2:
+        Check1 = true;
+        Check2 = false;
+        Check3 = false;
+        Check4 = false;
+        checkString = "Two Checks";
+        break;
+      case 3:
+        Check1 = true;
+        Check2 = false;
+        Check3 = false;
+        Check4 = false;
+        checkString = "Three Checks";
+        break;
+      case 4:
+        Check1 = true;
+        Check2 = false;
+        Check3 = false;
+        Check4 = false;
+        checkString = "Four Checks";
+        break;
+      //
+      default: //this is unfunctional (there is still always at least one check)
+        let arrayWithoutElement = panelInformation.filter(
+          (panelElement) => panelElement.id !== product.id
+        );
+        setPanelInformation(arrayWithoutElement);
+        localStorage.setItem(`panel`, JSON.stringify(arrayWithoutElement));
+    }
+    let objectToPass = {
+      id: product.id,
       name: product.name,
       imageUrl: product.imageUrl,
       price: product.price,
@@ -115,37 +89,13 @@ export default function Category() {
       option4: Check4,
       category: product.category,
       amtstars: checkString,
-    }
-      //createPanelElement(objectToPass)
-      //2
-      //@@@@@@@@@@@@@@@@@not passing an object yet, as Ingrid recommended
-      //quick fix
-      createPanelElement(
-        product.id,
-        product.name,
-        product.imageUrl,
-        product.price,
-        Check1,
-        Check2,
-        Check3,
-        Check4,
-        product.category,
-        checkString)
-
-      
-    
-    
-
-}
-
-  
-  //keep art pieces organized using there id for panel
-  //// ICC I'd want to investigate the purpose and need for this function if some of my suggestion about refactoring the way to do checkmarks in the computeChecks function were implemented. This may not be needed.
-  //3
+    };
+    createPanelElement(objectToPass);
+  };
   //@@@@@@@@@@@@@@@@@@@@@
   //makes an array in order of indices of ids
   function redistributeTheIds(panelInformation) {
-   let arrayOfIDS = [];
+    let arrayOfIDS = [];
     for (let i = 0; i < panelInformation.length; i++) {
       let IDVariable = panelInformation[i].id;
       arrayOfIDS[i] = IDVariable;
@@ -153,26 +103,42 @@ export default function Category() {
     return arrayOfIDS;
   }
 
-  //1
-  //@@@@@@@@@@@@pass in an object? - see updatepanel, above
-  //this shape of the parameter would be this: {id, name, url, price, option1, option2, option3, option4, category, amountstars} - WHAT, USE DOT NOTATION WITH OBJECT
-  //OR DECLARE THE VARIABLES AT BEGINNING destructuring
-  const createPanelElement = (
-    id,
-    name,
-    url,
-    price,
-    option1,
-    option2,
-    option3,
-    option4,
-    category,
-    amountstars
-  ) => {
+  const createPanelElement = (objectIn) => {
+    const {
+      id,
+      name,
+      imageUrl,
+      price,
+      option1,
+      option2,
+      option3,
+      option4,
+      category,
+      amountstars,
+    } = objectIn;
+
+    //***************NOT UNDERSTANDING THIS!*************
+    /*need help with this, I don't understand, why does object have spread when it is one object, and why would there be additional properties    
+    
+    /* ICC you could refactor this function to accept an object as a parameter and then use the spread operator to copy over the properties of that object to the new object you are creating, and only modify properties that need to be changed like this:
+    let panelInformationElementToAdd = {
+    ...objectPassedIn, 
+    imageUrl: url, 
+    options: [
+      { option: "option1", checked: option1 },
+      { option: "option2", checked: option2 },
+      { option: "option3", checked: option3 },
+      { option: "option4", checked: option4 },
+    ],
+    amtstars: amountstars,
+  }
+    this change removes redundancy and makes the code easier to read and maintain.
+  */
+
     let panelInformationElementToAdd = {
       id: id,
       name: name,
-      imageUrl: url,
+      imageUrl: imageUrl,
       price: price,
       options: [
         { option: "option1", checked: option1 },
@@ -183,24 +149,25 @@ export default function Category() {
       category: category,
       amtstars: amountstars,
     };
-    //if this panel element is already part of the panel then remove itt
-    let panelInformation2 = panelInformation.filter(
+    //keeps only element with the id, if this has length of zero, than this element is not in array
+    let element = panelInformation.filter(
       (panelElement) => panelElement.id === id
     );
-    //there are no elements in array for panel with this new info
-    if (panelInformation2.length === 0) {
-      let arrayFOrPanel = [...panelInformation, panelInformationElementToAdd];
-      setPanelInformation(arrayFOrPanel);
-      localStorage.setItem(`panel`, JSON.stringify(arrayFOrPanel));
+    //there are no matching elements with id, so element is length zero
+    //meaning the element doesn't exist yet, so add it to array
+    if (element.length === 0) {
+      //puts element at end of array and order by index is preserved
+      let arrayForPanel = [...panelInformation, panelInformationElementToAdd];
+      setPanelInformation(arrayForPanel);
+      localStorage.setItem(`panel`, JSON.stringify(arrayForPanel));
     } else {
       ///there is an element with this check, and checks have changed
       let arrayOfIDs = [];
-      //checks the array of ordered ids, if it is equal to the newest id (last in array)
-      //then put this object into panelinformationchanged
-      //otherwise, just put older objects in ordeer
       const panelInformationChanged = panelInformation.map((pan, index) => {
         arrayOfIDs = redistributeTheIds(panelInformation);
         let ID_OfElement = arrayOfIDs[index];
+        //This is a used element that is in array of indicies, so let's change it
+        //and modify the property!
         if (ID_OfElement === id) {
           return panelInformationElementToAdd;
         } else {
@@ -212,28 +179,35 @@ export default function Category() {
     }
   };
 
-  return(
-   
-  <div className = "page-container">
-    <div className = "artwork-title">
-    Would you like to rate these works?
+  return (
+    <div className="page-container">
+      <div className="artwork-title">Would you like to rate these works?</div>
+      <div className="buttonShow">
+        <button
+          onClick={() => {
+            setShowPanel((showPanel) => !showPanel);
+          }}
+        >
+          {showPanel ? "Hide Panel" : "Show Panel"}
+        </button>
+      </div>
+      <div className="artwork-link">
+        <NavLink to="/">Home Page</NavLink>
+      </div>
+      <CategoryContainer>
+        {artPiecesOfCategoryArray.map((product) => (
+          // Display artwork in this component
+          <ArtPiece
+            key={product.imageUrl}
+            product={product}
+            showPanel={showPanel}
+            panelInformation={panelInformation}
+            products={products}
+            setProducts={setProducts}
+            updatePanelInfo={updatePanelInfo}
+          />
+        ))}
+      </CategoryContainer>
     </div>
-    <div  className="buttonShow">
-    <button onClick={() => {setShowPanel((showPanel) => !showPanel);}}>
-    {showPanel? 'Hide Panel' : 'Show Panel' }
-    </button>
-    </div>
-    <div className = "artwork-link">
-    <NavLink to="/">Home Page</NavLink>
-    </div>
-  <CategoryContainer>
-  {artPiecesOfCategoryArray.map((product) => (
-  // Display artwork in this mapped component
-  <ArtPiece key = {product.imageUrl} product = {product} showPanel={showPanel} panelInformation={panelInformation}  products={products} setProducts =  {setProducts} updatePanelInfo = {updatePanelInfo}   />
-  ))}
-  </CategoryContainer>
-</div>
-
-  )
+  );
 }
-

@@ -3,13 +3,13 @@ import Panel from "../panel/panel-component";
 import "./art-piece-styles.css";
 
 const ArtPiece = ({
+  products,
   product,
   showPanel,
   panelInformation,
-  products,
+  artPiecesOfCategoryArray,
   setProducts,
-  updatePanelInfo,
-  artPiecesOfCategoryArray
+  updatePanelInfo
 }) => {
   
   
@@ -28,14 +28,16 @@ const ArtPiece = ({
     updatePanelInfo(product.amtstars2, product);
     localStorage.setItem(`products`, JSON.stringify(products));
   };
-   return (
+
+   return ( 
+   
     <div>
       <>
         <div key={product.imageUrl}>
           <div>
             <h2>{product.name}</h2>
-            <h3>${product.price}.00</h3>
-            <div>
+           
+              
               <img type="Image" src={product.imageUrl} alt={product.name} />
               <input
                 checked={product.amtstars2 >= 1}
@@ -57,7 +59,7 @@ const ArtPiece = ({
                 type={`checkbox`}
                 onChange={() => updateStars(product.id, 4)}
               />
-            </div>
+            
           </div>
           <div>
             {showPanel && (
@@ -66,11 +68,16 @@ const ArtPiece = ({
               category={panelInformation}
 
               />
-            )}
-          </div>
+            )
+            }
+          
+         </div>
         </div>
       </>
     </div>
-  );
-};
+            )}
+            
+            
+
+
 export default ArtPiece;

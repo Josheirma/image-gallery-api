@@ -180,10 +180,17 @@ export default function Category() {
       setPanelInformation(panelInformationChanged);
       localStorage.setItem(`panel`, JSON.stringify(panelInformationChanged));
     }
-  };
+  }
+  
 
 
-
+  
+  artPiecesOfCategoryArray = artPiecesOfCategoryArray.filter(
+    (element) => 1 === 1
+  );
+  
+  
+  
   return (
     <div className="page-container">
       <div className = "artwork-title">Would you like to rate these works?</div>
@@ -205,8 +212,8 @@ export default function Category() {
         <NavLink to="/">Home Page</NavLink>
       </div>
       <CategoryContainer>
-        {artPiecesOfCategoryArray.map((product) => (
-          // Display artwork in this component
+        
+      {artPiecesOfCategoryArray.map((product) => (
           <ArtPiece
             key={product.imageUrl}
             products={products}
@@ -217,8 +224,10 @@ export default function Category() {
             setProducts={setProducts}
             updatePanelInfo={updatePanelInfo}
           />
-        ))}
+        ))};
       </CategoryContainer>
     </div>
-  );
-}
+ 
+
+)
+} 

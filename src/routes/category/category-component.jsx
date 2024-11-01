@@ -106,15 +106,15 @@ export default function Category() {
   const createPanelElement = (objectIn) => {
     const {
       id,
-      name,
-      imageUrl,
-      price,
+      //name,
+      //imageUrl,
+      //price,
       option1,
       option2,
       option3,
       option4,
-      category,
-      amtstars,
+      //category,
+      //amtstars,
     } = objectIn;
 
     //***************NOT UNDERSTANDING THIS!*************
@@ -135,19 +135,22 @@ export default function Category() {
     this change removes redundancy and makes the code easier to read and maintain.
   */
 
-    let panelInformationElementToAdd = {
-      id: id,
-      name: name,
-      imageUrl: imageUrl,
-      price: price,
+    let panelInformationElementToAdd = {   
+      ...objectIn,  
+
+    //  id: id,
+    //  name: name,
+    //  imageUrl: imageUrl,
+    //  price: price,
+
       options: [
         { option: "option1", checked: option1 },
         { option: "option2", checked: option2 },
         { option: "option3", checked: option3 },
         { option: "option4", checked: option4 },
       ],
-      category: category,
-      amtstars: amtstars,
+      //category: category,
+      //amtstars: amtstars,
     };
     //keeps only element with the id, if this has length of zero, than this element is not in array
     let element = panelInformation.filter(
@@ -179,9 +182,11 @@ export default function Category() {
     }
   };
 
+
+
   return (
-    <div class="page-container">
-      <div class = "artwork-title">Would you like to rate these works?</div>
+    <div className="page-container">
+      <div className = "artwork-title">Would you like to rate these works?</div>
       
       
       <ButtonContainer >
@@ -196,7 +201,7 @@ export default function Category() {
       </ButtonContainer>
 
 
-      <div class="artwork-link">
+      <div className="artwork-link">
         <NavLink to="/">Home Page</NavLink>
       </div>
       <CategoryContainer>
@@ -204,10 +209,11 @@ export default function Category() {
           // Display artwork in this component
           <ArtPiece
             key={product.imageUrl}
+            products={products}
             product={product}
             showPanel={showPanel}
             panelInformation={panelInformation}
-            products={products}
+            artPiecesOfCategoryArray={artPiecesOfCategoryArray}
             setProducts={setProducts}
             updatePanelInfo={updatePanelInfo}
           />

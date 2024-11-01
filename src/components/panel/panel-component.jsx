@@ -1,7 +1,7 @@
 import { DropDown } from "./panel-styles";
 
 
-function Panel({category}) {
+function Panel({category, artPiecesOfCategoryArray}) {
   return (
     <div>
       <DropDown>
@@ -9,9 +9,9 @@ function Panel({category}) {
          {category &&
             category.map((item, index) => (
              <div key={index}>
-                <p>{item.name1}</p>
+                <p>{item.name}</p>
                 <br></br>
-                <img src={item.imageUrl} margin alt = {`Panel Image`} />
+                <img src={item.imageUrl} alt = {`Panel Image`} />
                 <p>${item.price}.00</p>
                 <p>{item.amtstars}</p> 
                 <p>----</p>

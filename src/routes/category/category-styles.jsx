@@ -10,9 +10,8 @@ justify-content: center;
 
 export const ButtonShow = styled.button`
  
-width: 4rem;
-height:1rem;
-font-size: 3rem;
+padding: 10px 15px;
+font-size: 5rem;
 `;
 
 

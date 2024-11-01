@@ -9,6 +9,7 @@ const ArtPiece = ({
   products,
   setProducts,
   updatePanelInfo,
+  artPiecesOfCategoryArray
 }) => {
   
   
@@ -61,8 +62,9 @@ const ArtPiece = ({
           <div>
             {showPanel && (
               <Panel
-                key={panelInformation.id}
-                category={panelInformation}
+              artPiecesOfCategoryArray = {artPiecesOfCategoryArray}
+              category={panelInformation}
+
               />
             )}
           </div>

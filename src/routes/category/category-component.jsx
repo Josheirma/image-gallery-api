@@ -7,7 +7,7 @@ import ArtPiece from "../../components/art-piece/art-piece-component.jsx";
 import "./category-styles.css";
 
 export default function Category() {
-  let artPiecesOfCategoryArray = [];
+  let artPiyArray = [];
   let [showPanel, setShowPanel] = useState(false);
   let [panelInformation, setPanelInformation] = useState([]);
   const route = useParams();
@@ -16,7 +16,7 @@ export default function Category() {
   let [products, setProducts] = useState(ART);
   //this is an array of products with the catefory from artists directory
   //passed using routes and links
-  artPiecesOfCategoryArray = products.filter(
+  let artPiecesOfCategoryArray = products.filter(
     (element) => element.category === imageCategoryToShow
   );
 
@@ -185,12 +185,12 @@ export default function Category() {
 
 
   
-  artPiecesOfCategoryArray = artPiecesOfCategoryArray.filter(
-    (element) => 1 === 1
-  );
+  //artPiecesOfCategoryArray = artPiecesOfCategoryArray.filter(
+  //  (element) => 1 === 1
+  //);
   
   
-  
+  let arrayOfArt = []
   return (
     <div className="page-container">
       <div className = "artwork-title">Would you like to rate these works?</div>
@@ -211,18 +211,34 @@ export default function Category() {
       <div className="artwork-link">
         <NavLink to="/">Home Page</NavLink>
       </div>
+     
       <CategoryContainer>
+
+
         
-      {artPiecesOfCategoryArray.map((product) => (
+      {arrayOfArt = products.filter(
+        (element) => element.id === 1
+      )}
+      
+
+          {artPiecesOfCategoryArray.map((artProduct) => (
           <ArtPiece
-            key={product.imageUrl}
+            key={artProduct.imageUrl}
             products={products}
-            product={product}
+            product1={artProduct}
             showPanel={showPanel}
-            panelInformation={panelInformation}
-            artPiecesOfCategoryArray={artPiecesOfCategoryArray}
+            //contains products to be listed in panel
+            //panelInformation={panelInformation}
+
+
+            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            //REMOVE THIS
+            //artPiecesOfCategoryArray={artPiecesOfCategoryArray}
+            
+            
+            
             setProducts={setProducts}
-            updatePanelInfo={updatePanelInfo}
+            //updatePanelInfo={updatePanelInfo}
           />
         ))};
       </CategoryContainer>
@@ -230,4 +246,5 @@ export default function Category() {
  
 
 )
-} 
+}
+ 

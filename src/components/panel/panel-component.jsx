@@ -1,13 +1,13 @@
 import { DropDown } from "./panel-styles";
 
 
-function Panel({category, artPiecesOfCategoryArray}) {
+function Panel({product}) {
   return (
     <div>
       <DropDown>
         <div>
-         {category &&
-            category.map((item, index) => (
+         {product &&
+            product.map((item, index) => (
              <div key={index}>
                 <p>{item.name}</p>
                 <br></br>

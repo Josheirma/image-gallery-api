@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import { CategoryContainer, ButtonShow, ButtonContainer } from "./category-styles";
 import { useParams } from "react-router-dom";
 import { NavLink } from "../navigation/navigation-styles";
@@ -189,9 +189,13 @@ export default function Category() {
   //  (element) => 1 === 1
   //);
   
-  
+  console.log("category: ", imageCategoryToShow)
   let arrayOfArt = []
+
+  //const MemoizedChild = React.memo(ArtPiece); 
   return (
+   
+    <>
     <div className="page-container">
       <div className = "artwork-title">Would you like to rate these works?</div>
       
@@ -206,7 +210,7 @@ export default function Category() {
             {showPanel ? "Hide Panel" : "Show Panel"}
         </ButtonShow>
       </ButtonContainer>
-
++
 
       <div className="artwork-link">
         <NavLink to="/">Home Page</NavLink>
@@ -221,11 +225,13 @@ export default function Category() {
       )}
       
 
-          {artPiecesOfCategoryArray.map((artProduct) => (
+      
+          
           <ArtPiece
-            key={artProduct.imageUrl}
+            //key={artProduct.imageUrl}
             products={products}
-            product1={artProduct}
+            category={imageCategoryToShow}
+            //product1={artProduct}
             showPanel={showPanel}
             //contains products to be listed in panel
             //panelInformation={panelInformation}
@@ -236,14 +242,15 @@ export default function Category() {
             //artPiecesOfCategoryArray={artPiecesOfCategoryArray}
             
             
-            
+            setPanelInformation = {setPanelInformation}
             setProducts={setProducts}
             //updatePanelInfo={updatePanelInfo}
           />
-        ))};
+       
       </CategoryContainer>
     </div>
  
+ </>
 
 )
 }

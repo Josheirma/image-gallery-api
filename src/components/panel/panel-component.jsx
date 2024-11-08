@@ -1,26 +1,29 @@
 import { DropDown } from "./panel-styles";
 
 
-function Panel({product}) {
+function Panel({arrayOfProducts3}) {
+  
+  
   return (
     <div>
       <DropDown>
         <div>
-         {product &&
-            product.map((item, index) => (
-             <div key={index}>
-                <p>{item.name}</p>
+         
+             <div >
+                <p>{arrayOfProducts3.name}</p>
                 <br></br>
-                <img src={item.imageUrl} alt = {`Panel Image`} />
-                <p>${item.price}.00</p>
-                <p>{item.amtstars}</p> 
+                <img src={arrayOfProducts3.imageUrl} alt = {`Panel Image`} />
+                <p>${arrayOfProducts3.price}.00</p>
+                <p>{arrayOfProducts3.amtstars}</p> 
                 <p>----</p>
               </div>
-            ))}
+          
         </div>
       </DropDown>
     </div>
   );
-}
+
+
+  }
 
 export default Panel;

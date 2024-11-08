@@ -4,7 +4,7 @@ const ART = [
     
     {
       id: 2,
-      name: "Title",
+      name: "Title1",
       imageUrl: require("./4.png"
         
       ),
@@ -23,7 +23,7 @@ const ART = [
   
     {
       id: 4,
-      name: "Title",
+      name: "Title2",
       imageUrl: require("./6.png"),
       price: 10,
       options: [
@@ -39,7 +39,7 @@ const ART = [
     
     {
       id: 3,
-      name: "Title",
+      name: "Title3",
       imageUrl: require("./5.png"),
       price: 10,
       options: [
@@ -55,7 +55,7 @@ const ART = [
     
     {
       id: 7,
-      name: "Title",
+      name: "Title-4",
       imageUrl: require("./9.png"),
       price: 10,
       options: [
@@ -70,7 +70,7 @@ const ART = [
     },
     {
       id: 8,
-      name: "Title",
+      name: "Title5",
       imageUrl: require("./10.png"),
       price: 10,
       options: [
@@ -85,7 +85,7 @@ const ART = [
     },
     {
       id: 9,
-      name: "Title",
+      name: "Titl6",
       imageUrl: require("./11.png"),
       price: 10,
       options: [

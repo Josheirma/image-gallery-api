@@ -57,7 +57,7 @@ const ArtPiece = (({
       }
       return(artPieces)
     });
-    setProducts(updatedarrayOfProducts);
+    setProducts(supdatedarrayOfProducts);
     setPanelInformation(updatedarrayOfProducts);
       //updatePanelInfo(arrayOfProducts.amountStarsNumber, updatedarrayOfProducts);
       //localStorage.setItem(`panel`, JSON.stringify(updatedarrayOfProducts));

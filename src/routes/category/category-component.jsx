@@ -7,6 +7,12 @@ import ArtPiece from "../../components/art-piece/art-piece-component.jsx";
 import "./category-styles.css";
 
 export default function Category() {
+  //let [bypass, setShowBypass] = useState(false);
+  
+  let flag1 = true
+  
+  
+  
   let artPiyArray = [];
   let [showPanel, setShowPanel] = useState(false);
   let [panelInformation, setPanelInformation] = useState([]);
@@ -19,6 +25,10 @@ export default function Category() {
   let artPiecesOfCategoryArray = products.filter(
     (element) => element.category === imageCategoryToShow
   );
+
+ 
+ 
+  
 
   useEffect(() => {
     // get any products in locals torage for both products and panel - just on first render
@@ -33,6 +43,7 @@ export default function Category() {
       setPanelInformation(panelsArrayStored);
     }
   }, []);
+
 
   //const onComplete = after(products.length, () => {
   //});
@@ -224,27 +235,14 @@ export default function Category() {
         (element) => element.id === 1
       )}
       
-
-      
-          
           <ArtPiece
             //key={artProduct.imageUrl}
             products={products}
             category={imageCategoryToShow}
-            //product1={artProduct}
             showPanel={showPanel}
-            //contains products to be listed in panel
-            //panelInformation={panelInformation}
-
-
-            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            //REMOVE THIS
-            //artPiecesOfCategoryArray={artPiecesOfCategoryArray}
-            
-            
             setPanelInformation = {setPanelInformation}
             setProducts={setProducts}
-            //updatePanelInfo={updatePanelInfo}
+            
           />
        
       </CategoryContainer>

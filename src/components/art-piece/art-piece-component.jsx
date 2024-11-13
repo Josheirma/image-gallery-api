@@ -26,6 +26,7 @@ const ArtPiece = (({
 
   
 
+//contextIsFromDirectory set in directory and hereconterc
   
   
 

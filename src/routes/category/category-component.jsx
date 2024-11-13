@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useMemo} from "react";
 import { CategoryContainer, ButtonShow, ButtonContainer } from "./category-styles";
 import { useParams } from "react-router-dom";
 import { NavLink } from "../navigation/navigation-styles";

@@ -11,7 +11,7 @@ justify-content: center;
 export const ButtonShow = styled.button`
  
 padding: 10px 15px;
-font-size: 5rem;
+font-size: 1rem;
 `;
 
 

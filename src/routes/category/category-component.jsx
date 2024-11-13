@@ -2,8 +2,9 @@ import React, { useState, useEffect, useMemo} from "react";
 import { CategoryContainer, ButtonShow, ButtonContainer } from "./category-styles";
 import { useParams } from "react-router-dom";
 import { NavLink } from "../navigation/navigation-styles";
-import { ART } from "../../assets/ART_DATA.js";
-import ArtPiece from "../../components/art-piece/art-piece-component.jsx";
+import { ART } from "../../assets/ART_DATA";
+import ArtPieceItem from "../../components/art-piece/art-piece-item.jsx";
+import Panel from "../../components/panel/panel-component.jsx";
 import "./category-styles.css";
 
 export default function Category() {
@@ -28,6 +29,13 @@ export default function Category() {
   
   
   
+
+
+  let artPiecesOfCategoryArray =  products.filter(
+    (element) => element.category === imageCategoryToShow
+  );
+
+  /*
   //MEMOIZE  - only if products or imagecate...
   let artPiecesOfCategoryArray = useMemo( () => {
     return 
@@ -36,7 +44,7 @@ export default function Category() {
     );
   
   } , [products, imageCategoryToShow])
- 
+ */
  
   
 
@@ -55,8 +63,45 @@ export default function Category() {
   }, []);
 
 
-  //const onComplete = after(products.length, () => {
-  //});
+  /////
+
+  const updateStars = (id, amtStars) => {
+
+    let updatedarrayOfProducts = products.map((artPieces) => {
+      if (artPieces.id === id) {
+        if (artPieces.amountStarsNumber === amtStars) {
+          artPieces.amountStarsNumber = 0;
+          artPieces.amtstars = ""
+        } else {
+          artPieces.amountStarsNumber = amtStars;
+          if(amtStars === 1){
+            artPieces.amtstars = "One Check"
+          }
+          if(amtStars === 2){
+            artPieces.amtstars = "Two Check"
+          }
+          if(amtStars === 3){
+            artPieces.amtstars = "Three Check"
+          }
+          if(amtStars === 4){
+            artPieces.amtstars = "Four Check"
+          }
+        }
+      
+      }
+      return(artPieces)
+    });
+    setProducts(updatedarrayOfProducts);
+    setPanelInformation(updatedarrayOfProducts);
+      //updatePanelInfo(arrayOfProducts.amountStarsNumber, updatedarrayOfProducts);
+      //localStorage.setItem(`panel`, JSON.stringify(updatedarrayOfProducts));
+      //see useffect, category component
+      localStorage.setItem(`products`, JSON.stringify(updatedarrayOfProducts));
+  };
+  
+
+
+  /////
 
   //get data for createpanelelement
   const updatePanelInfo = (amtountOfChecks, product) => {
@@ -213,11 +258,15 @@ export default function Category() {
   console.log("category: ", imageCategoryToShow)
   let arrayOfArt = []
 
+  //  462 a3
   //const MemoizedChild = React.memo(ArtPiece); 
   return (
    
     <>
+   
+    
     <div className="page-container">
+    {showPanel && <Panel  artPiecesOfCategoryArray = {artPiecesOfCategoryArray}  />}
       <div className = "artwork-title">Would you like to rate these works?</div>
       
       
@@ -228,6 +277,8 @@ export default function Category() {
           }}
           
           >
+
+            
             {showPanel ? "Hide Panel" : "Show Panel"}
         </ButtonShow>
       </ButtonContainer>
@@ -236,22 +287,18 @@ export default function Category() {
       <div className="artwork-link">
         <NavLink to="/">Home Page</NavLink>
       </div>
+      
+
+
+     
      
       <CategoryContainer>
 
 
-        
-     
-      
-          <ArtPiece
-            //key={artProduct.imageUrl}
-            products={products}
-            category={imageCategoryToShow}
-            showPanel={showPanel}
-            setPanelInformation = {setPanelInformation}
-            setProducts={setProducts}
-            
-          />
+          {artPiecesOfCategoryArray.map((item, index) => (
+
+          <ArtPieceItem key = {index} item = {item} updateStars = {updateStars}/>
+          ))}
        
       </CategoryContainer>
     </div>

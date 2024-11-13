@@ -2,7 +2,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const NavLink = styled(Link)`
-  font-size: .6rem;
+  
+  font-size: 2rem;
+  padding-top:10px;
   color:gray;
   cursor: pointer;
   &link{
@@ -11,7 +13,7 @@ export const NavLink = styled(Link)`
   &:visited{
     color:blue;
   }
-  &:hover{
+  &:hover{sty
     color: red;
   }
   &:active{

@@ -1,7 +1,7 @@
 import { DropDown } from "./panel-styles";
 
 
-function Panel({arrayOfProducts3}) {
+function Panel({artPiecesOfCategoryArray}) {
   
   
   return (
@@ -10,11 +10,11 @@ function Panel({arrayOfProducts3}) {
         <div>
          
              <div >
-                <p>{arrayOfProducts3.name}</p>
+                <p>{artPiecesOfCategoryArray.name}</p>
                 <br></br>
-                <img src={arrayOfProducts3.imageUrl} alt = {`Panel Image`} />
-                <p>${arrayOfProducts3.price}.00</p>
-                <p>{arrayOfProducts3.amtstars}</p> 
+                <img src={artPiecesOfCategoryArray.imageUrl} alt = {`Panel Image`} />
+                <p>${artPiecesOfCategoryArray.price}.00</p>
+                <p>{artPiecesOfCategoryArray.amtstars}</p> 
                 <p>----</p>
               </div>
           

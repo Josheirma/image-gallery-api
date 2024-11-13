@@ -17,15 +17,25 @@ export default function Category() {
   let [showPanel, setShowPanel] = useState(false);
   let [panelInformation, setPanelInformation] = useState([]);
   const route = useParams();
+  
+  
+  
   let imageCategoryToShow = route.category;
   //sets products to art, amountstars2 is zero, and string is none
   let [products, setProducts] = useState(ART);
   //this is an array of products with the catefory from artists directory
   //passed using routes and links
-  let artPiecesOfCategoryArray = products.filter(
-    (element) => element.category === imageCategoryToShow
-  );
-
+  
+  
+  
+  //MEMOIZE  - only if products or imagecate...
+  let artPiecesOfCategoryArray = useMemo( () => {
+    return 
+    products.filter(
+      (element) => element.category === imageCategoryToShow
+    );
+  
+  } , [products, imageCategoryToShow])
  
  
   
@@ -231,9 +241,7 @@ export default function Category() {
 
 
         
-      {arrayOfArt = products.filter(
-        (element) => element.id === 1
-      )}
+     
       
           <ArtPiece
             //key={artProduct.imageUrl}

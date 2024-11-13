@@ -57,17 +57,18 @@ const ArtPiece = (({
       }
       return(artPieces)
     });
-    setProducts(supdatedarrayOfProducts);
+    setProducts(updatedarrayOfProducts);
     setPanelInformation(updatedarrayOfProducts);
       //updatePanelInfo(arrayOfProducts.amountStarsNumber, updatedarrayOfProducts);
       //localStorage.setItem(`panel`, JSON.stringify(updatedarrayOfProducts));
-    
+      //see useffect, category component
+      localStorage.setItem(`products`, JSON.stringify(updatedarrayOfProducts));
       
 
 
     
 
-    return true;
+    //return true;
   };
 
     let arrayOfProducts1 = products.filter(

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo} from "react";
+import React, { useState, useEffect, useMemo, useRef} from "react";
 import { CategoryContainer, ButtonShow, ButtonContainer } from "./category-styles";
 import { useParams } from "react-router-dom";
 import { NavLink } from "../navigation/navigation-styles";
@@ -7,59 +7,58 @@ import ArtPieceItem from "../../components/art-piece/art-piece-item.jsx";
 import Panel from "../../components/panel/panel-component.jsx";
 import "./category-styles.css";
 
+
 export default function Category() {
-  //let [bypass, setShowBypass] = useState(false);
+  
+  
+ const cellRef = useRef(null); // Create a ref for the grid cell
+  const [cellWidth, setCellWidth] = useState(0); // State to store the width
+
+  useEffect(() => {
+    if (cellRef.current) {
+      // Measure the width of the cell using getBoundingClientRect
+      const width = cellRef.current.getBoundingClientRect().width;
+      setCellWidth(width);
+    }
+
+    // Optional: Update on window resize if grid size is responsive
+    const handleResize = () => {
+      if (cellRef.current) {
+        setCellWidth(cellRef.current.getBoundingClientRect().width);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   
   let flag1 = true
-  
-  
-  
   let artPiyArray = [];
   let [showPanel, setShowPanel] = useState(false);
-  let [panelInformation, setPanelInformation] = useState([]);
   const route = useParams();
-  
-  
-  
   let imageCategoryToShow = route.category;
   //sets products to art, amountstars2 is zero, and string is none
   let [products, setProducts] = useState(ART);
-  //this is an array of products with the catefory from artists directory
-  //passed using routes and links
-  
-  
-  
-
-
-  let artPiecesOfCategoryArray =  products.filter(
-    (element) => element.category === imageCategoryToShow
-  );
-
-  /*
   //MEMOIZE  - only if products or imagecate...
   let artPiecesOfCategoryArray = useMemo( () => {
-    return 
-    products.filter(
-      (element) => element.category === imageCategoryToShow
+    return products.filter((element) => element.category === imageCategoryToShow
     );
   
   } , [products, imageCategoryToShow])
- */
+ 
+  let arrayWithStars  = products.filter(
+    (element) => element.amountStarsNumber !=  0
+  );
  
   
 
   useEffect(() => {
     // get any products in locals torage for both products and panel - just on first render
     const productsArrayStored = JSON.parse(localStorage.getItem("products"));
-    const panelsArrayStored = JSON.parse(localStorage.getItem("panel"));
-    //if in local storage, set to products and panel
+   
     if (productsArrayStored) {
       setProducts(productsArrayStored);
     }
-    if (panelsArrayStored) {
-      //same shape as products is stored to panel
-      setPanelInformation(panelsArrayStored);
-    }
+    
   }, []);
 
 
@@ -71,20 +70,21 @@ export default function Category() {
       if (artPieces.id === id) {
         if (artPieces.amountStarsNumber === amtStars) {
           artPieces.amountStarsNumber = 0;
-          artPieces.amtstars = ""
+          artPieces.amtstars = "none"
         } else {
           artPieces.amountStarsNumber = amtStars;
-          if(amtStars === 1){
+         if(amtStars === 1){
+          
             artPieces.amtstars = "One Check"
           }
           if(amtStars === 2){
-            artPieces.amtstars = "Two Check"
+            artPieces.amtstars = "Two Checks"
           }
           if(amtStars === 3){
-            artPieces.amtstars = "Three Check"
+            artPieces.amtstars = "Three Checks"
           }
           if(amtStars === 4){
-            artPieces.amtstars = "Four Check"
+            artPieces.amtstars = "Four Checks"
           }
         }
       
@@ -92,25 +92,15 @@ export default function Category() {
       return(artPieces)
     });
     setProducts(updatedarrayOfProducts);
-    setPanelInformation(updatedarrayOfProducts);
-      //updatePanelInfo(arrayOfProducts.amountStarsNumber, updatedarrayOfProducts);
-      //localStorage.setItem(`panel`, JSON.stringify(updatedarrayOfProducts));
-      //see useffect, category component
+   
       localStorage.setItem(`products`, JSON.stringify(updatedarrayOfProducts));
   };
   
-
-
   return (
-   
-    <>
-   
-    
+     <>
     <div className="page-container">
-    {showPanel && <Panel  artPiecesOfCategoryArray = {artPiecesOfCategoryArray}  />}
-      <div className = "artwork-title">Would you like to rate these works?</div>
-      
-      
+     <div className = "artwork-title">Would you like to rate these works?</div>
+      <div>Width: {cellWidth}px</div>
       <ButtonContainer >
         <ButtonShow
           onClick={() => {
@@ -123,25 +113,29 @@ export default function Category() {
             {showPanel ? "Hide Panel" : "Show Panel"}
         </ButtonShow>
       </ButtonContainer>
-+
 
+
+          
       <div className="artwork-link">
-        <NavLink to="/">Home Page</NavLink>
+      <a href="/">Home</a>
       </div>
       
+      {showPanel && <Panel items = {arrayWithStars}  />}
 
 
      
      
-      <CategoryContainer>
-
-
+      
+          <div  className = "CategoryContainer" >
           {artPiecesOfCategoryArray.map((item, index) => (
-
-          <ArtPieceItem key = {index} item = {item} updateStars = {updateStars}/>
+          
+          <ArtPieceItem  key = {index} item = {item} updateStars = {updateStars} ref = {cellRef}/>
           ))}
+          </div>
        
-      </CategoryContainer>
+       
+
+      
     </div>
  
  </>

@@ -1,0 +1,174 @@
+12/5/24
+
+has tables or map hash tables
+hash function
+buckets
+keys
+indexes
+map key colisions
+
+//uses:
+objects
+maps 
+sets
+
+fast lookup
+
+const name-map = new Map()
+
+[1, 'John']  etc...
+
+????? implement map with a function
+
+.has function
+.size
+
+for (let [key, value] of nameMap){	//iterates 
+nameMap.forEach((value, key) => console.log ... 
+console.log(nameMap.keys())	// map iterator
+
+split(/\W/)  // remove any non alphabet 
+const words = str.toLowerCase().split(/\W/);
+
+!!!+ //: quantifier get all words!  !!!
+
+for(const entry of phonenumbers){ ...
+
+anagrams.set(sortedchars, [word])
+
+return Array.from(anagram.values())
+ 
+
+two arrays : seperate at colon
+ for each :  set map(first)
+	     set phone
+
+!!!! HASH TABLES : ANAGRAM GROUPING : 06
+
+set 
+not duplicate values
+no indexing
+
+const nameSet = new Set([John], [Jane])
+
+const nameArray = [...nameSet]
+
+
+set both arrays to sets, so both will only have one set of data
+make a single set of both arrays
+
+
+
+!!!!!09-two sums
+
+
+
+eliminate double with set
+
+
+_var    // private
+
+`Bucket ${i}: ${JSON...`  // use json stringify for rest
+
+ = [[key]]				//???
+
+for (const [key, value] of this.storage[i]) {
+
+str.replace(/[^a-zA-Z0-9]/g], '');  // only alpha numeric characters
+
+
+queue:
+head front where elements are removed
+tail, where they are added
+
+
+linked list:
+head is first node
+tail is last node and always points to null
+elements can be added or removed from both ends
+
+let c = {name: 'John'};
+c.name = 'Brad'
+
+fast = fast.next.next
+
+
+!!!!!FIND PAIR SUM " 16, QUEUES STACKS MAPS
+
+
+Depth :  longest amount of edges to leaf node
+Height : amount of edges from root
+Height of a tree : HEIGHT of root node (max edges)
+
+binary tree:
+1 root node
+most, is two children
+only 1 path between root and any node
+
+depth first go down the left and than right and than over
+
+
+
+BST
+at most two nodes
+left is less than parent
+right is more or equal than parent
+
+
+remove
+
+1: 1 or no children:
+return the child
+2: 2 children:
+find smallest value in right tree, replace node, and remove successor.
+3: is root node:
+replace with successor
+
+predecessor : on node above?
+successor :  replacement on node below
+
+Graph:
+
+vertices / node
+edge / link
+
+directed graph
+weighted
+cyclic - close dpath
+acyclic
+connected - can get to and from any node with a path
+disconnected
+
+cycle - starts and ends at same node
+
+adjacency graph / list
+lots of vertices
+iterations
+
+adjacency matrix
+lot of edges
+quickly tell if edge between two vertices
+
+breadth first graph:
+traverse each level and when all of a level have been traversed, pop
+
+
+depth first traversal:
+
+start at any vertex
+push neighbors : top/down
+
+add to stack (push) and add to visitors box
+goto anything connected to node
+
+do this as many times as needed:
+add to stack and visited
+if no unvisited nodes pop
+
+
+
+
+
+
+
+

@@ -1,26 +1,36 @@
 import { DropDown } from "./panel-styles";
+import './panel-styles.css'
 
-
-function Panel({artPiecesOfCategoryArray}) {
+const Panel = ({items}) => {
+  
+  console.log("item1: ", items)
   
   
+  let amountOfStars = ""
+  
+  
+  //HERE, INSTEAD OF SETTING CHECKS TO STRING IN UPDATE STARS, CHECK FOR AMTSTARSNUMBER AND ASSIGN A VARIABLE HERE
+  //
   return (
-    <div>
+    
       <DropDown>
-        <div>
+   
+    {items.map((item) => (
+      
+      
          
-             <div >
-                <p>{artPiecesOfCategoryArray.name}</p>
+             <div key = {item.id}>
+                <p>{item.name}</p>
                 <br></br>
-                <img src={artPiecesOfCategoryArray.imageUrl} alt = {`Panel Image`} />
-                <p>${artPiecesOfCategoryArray.price}.00</p>
-                <p>{artPiecesOfCategoryArray.amtstars}</p> 
+                <img className = "panelimage" src={item.imageUrl} alt = {`Panel Image`} />
+                <p>${item.price}.00</p>
+                <p>{item.amtstars}</p> 
                 <p>----</p>
               </div>
-          
-        </div>
+           ))}
+       
       </DropDown>
-    </div>
+    
   );
 
 

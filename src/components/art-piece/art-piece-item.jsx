@@ -1,18 +1,25 @@
 import "./art-piece-styles.css";
+import { ImageHeading } from "./art-piece-styles.jsx";
+import React, { useRef } from 'react';
+//import './CategoryContainer.css'; // Assuming the CSS for the grid layout.
 
 
-const ArtPieceItem = ({item, updateStars}) => {
 
-
+//const ArtPieceItem = ({item, updateStars}) => {
+//const ArtPieceItem = React.forwardRef(({ item, updateStars }, ref)) => {
+  const ArtPieceItem = React.forwardRef((props, ref) => {
+    const { item, updateStars } = props;
+  
 
   return(
-    <div>
+    <div ref = {ref}>
     <div key={item.imageUrl}>
     <div>
-      <h2>{item.name}</h2>
+      <ImageHeading> {item.name}</ImageHeading> 
      
-        
+        <div className = "image-holder" >
         <img type="Image" src={item.imageUrl} alt = "Image of Art"   />
+        </div>
         <input
           checked={item.amountStarsNumber >= 1}
           type={`checkbox`}
@@ -50,7 +57,7 @@ const ArtPieceItem = ({item, updateStars}) => {
        </div>
   )
 
-
-}
+  
+})
 
 export default ArtPieceItem;

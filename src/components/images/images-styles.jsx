@@ -1,20 +1,21 @@
 import styled from "styled-components";
 
+
+export const Img = styled.div`
+
+`;
+
 export const Body = styled.div`
   font-size: 5px;
-  width: 100%;
+  width: 80%;
   height: auto;
-  padding: 0 0px;
- background-color: white;
+  background-color: white;
   opacity: 0.7;
   margin-top: 1rem;
-  
+  margin-left:10%;
+  margin-right:10%;
 `;
 
 export const DirectoryItemContainer = styled.div``;
 
-//export const Img = styled.img`
-//width:200px;
-//
-//`; 
 

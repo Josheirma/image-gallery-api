@@ -1,0 +1,123 @@
+
+
+
+//How does this work (especially last statement)?
+
+function mergeSort(arr) {
+    // If the array has 1 or 0 elements, then it is already sorted.
+    if (arr.length <= 1) {
+      return arr;
+    }
+  
+    // Otherwise, divide the array into two halves and sort each half.
+    const mid = Math.floor(arr.length / 2);
+    const left = mergeSort(arr.slice(0, mid)); // From 0 to mid, not including mid.
+    const right = mergeSort(arr.slice(mid)); // From mid to the end.
+  
+    // Merge the sorted halves.
+    return merge(left, right);
+  }
+  
+  function merge(left, right) {
+    // Initialize an empty array to store the merged array.
+    const merged = [];
+    // Initialize two pointers to keep track of the current index of each half.
+    let leftIndex = 0;
+    let rightIndex = 0;
+  
+    // While both pointers are still within their respective halves, compare the elements at 
+    // the current indices and push the smaller one to the merged array.
+    while (leftIndex < left.length && rightIndex < right.length) {
+      // If the element in the left half is smaller, push it to the merged array and increment the left pointer.
+      if (left[leftIndex] < right[rightIndex]) {
+        merged.push(left[leftIndex]);
+        leftIndex++;
+      } else {
+        // Otherwise, push the element in the right half to the merged array and increment the right pointer.
+        merged.push(right[rightIndex]);
+        rightIndex++;
+      }
+    }
+    return merged.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  }
+  
+
+
+
+
+  //what is the variable i in the inner loop for?
+  function bubbleSort(arr) {
+    // Outer loop
+    for (let i = 0; i < arr.length; i++) {
+      // Inner loop
+      for (let j = 0; j < arr.length - i - 1; j++) {
+        console.log(arr[j], arr[j + 1]); // Display every comparison
+        // Check if the current element is greater than the next element
+        if (arr[j] > arr[j + 1]) {
+          // Swap the elements
+          // Assign the current element to a temporary variable
+          const temp = arr[j];
+          // Assign the next element to the current element (swap)
+          arr[j] = arr[j + 1];
+          // Assign the temporary variable to the next element
+          arr[j + 1] = temp;
+        }
+      }
+    }
+    return arr;
+  }
+
+
+
+
+    // Binary tree:               a
+    //                          /   \
+    //                         b     c
+    //                        / \    /
+    //                       d   e  f
+
+
+
+  //Node
+//root.left
+//root.right
+//root.value
+
+//why and how does the console.log work?
+function inOrderTraversal(root) {
+    if (root !== null) {
+        inOrderTraversal(root.left);  // Left subtree traversal
+        console.log("Visiting Node:", root.value);  // Log after left traversal
+        inOrderTraversal(root.right); // Right subtree traversal
+    }
+}
+
+
+
+//how does this work, especially set?
+
+function twoSum(nums, target) {
+    // Create a Set to store numbers that have been seen
+    const numSet = new Set();
+  
+    // Iterate through the input array
+    for (let i = 0; i < nums.length; i++) {
+      // Calculate the complement needed to reach the target sum
+      // nums[i] represents the current number being iterated in the array.
+      // target is the desired sum we're trying to achieve with two numbers.
+      // target - nums[i] calculates the difference between the target sum and the current number. This value is the complement.
+      const complement = target - nums[i];
+  
+      // If the complement is found in the numSet, return the indices of the two numbers
+      if (numSet.has(complement)) {
+        return [nums.indexOf(complement), i];
+      }
+  
+    // Add the current number to the numSet????????????????????
+    numSet.add(nums[i]);
+    }
+  
+    // If no solution is found, return an empty array
+    return [];
+  }

@@ -30,8 +30,13 @@ export default function Category() {
   let arrayWithStars  = products.filter(
     (element) => element.amountStarsNumber !=  0
   );
+
+  const [width, setWidth] = useState("")
  
-  
+  const handleMessage = (newWidth) => {
+    setWidth(newWidth)
+    console.log("logged",newWidth)
+  }
 
   useEffect(() => {
     // get any products in locals torage for both products and panel - just on first render
@@ -82,7 +87,7 @@ export default function Category() {
      <>
     <div className="page-container">
      <div className = "artwork-title">Would you like to rate these works?</div>
-      <div>Width: 0px</div>
+      <div></div>
       <ButtonContainer >
         <ButtonShow
           onClick={() => {
@@ -90,6 +95,8 @@ export default function Category() {
           }}
           
           >
+
+
 
             
             {showPanel ? "Hide Panel" : "Show Panel"}
@@ -111,7 +118,7 @@ export default function Category() {
           <div  className = "CategoryContainer" >
           {artPiecesOfCategoryArray.map((item, index) => (
           
-          <ArtPieceItem key = {index} item = {item} updateStars = {updateStars}/>
+          <ArtPieceItem onWidthChanged = {handleMessage} key = {index} item = {item} updateStars = {updateStars}/>
           ))}
           </div>
        

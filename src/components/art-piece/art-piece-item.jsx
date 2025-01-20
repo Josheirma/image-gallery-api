@@ -1,19 +1,45 @@
 import "./art-piece-styles.css";
 import { ImageHeading } from "./art-piece-styles.jsx";
-import React from 'react';
+import {useEffect, useLayoutEffect , useRef, useState}from 'react';
 //import './CategoryContainer.css'; // Assuming the CSS for the grid layout.
 
 
 
-const ArtPieceItem = ({item, updateStars}) => {
+const ArtPieceItem = ({onWidthChanged, item, updateStars}) => {
 //const ArtPieceItem = React.forwardRef(({ item, updateStars }, ref)) => {
   //const ArtPieceItem = React.forwardRef((props, ref) => {
   //  const { item, updateStars } = props;
-  
+  const divRef = useRef(null);
+  const [width, setWidth] = useState(0);
+
+  const sendWidth = (msg) => {
+  //const msg = "a"
+  onWidthChanged(msg);
+  }
+ 
+  useLayoutEffect(() => {
+    console.log("1")
+    sendWidth(divRef.current.offsetWidth);
+  });
+
+
+  useEffect(() => {
+  //sendWidth()
+  console.log("here")
+  // Attach the event listener
+  window.addEventListener("resize", sendWidth);
+
+  // Cleanup: Remove the event listener on component unmount
+  return () => {
+    window.removeEventListener("resize", sendWidth);
+  };
+
+  }, []);
 
   return(
     <div>
-    <div key={item.imageUrl}>
+     width:{width && divRef.current.offsetWidth}
+    <div ref={divRef}  key={item.imageUrl}>
     <div>
       <ImageHeading> {item.name}</ImageHeading> 
      

@@ -1,18 +1,18 @@
 import "./art-piece-styles.css";
 import { ImageHeading } from "./art-piece-styles.jsx";
-import React, { useRef } from 'react';
+import React from 'react';
 //import './CategoryContainer.css'; // Assuming the CSS for the grid layout.
 
 
 
-//const ArtPieceItem = ({item, updateStars}) => {
+const ArtPieceItem = ({item, updateStars}) => {
 //const ArtPieceItem = React.forwardRef(({ item, updateStars }, ref)) => {
-  const ArtPieceItem = React.forwardRef((props, ref) => {
-    const { item, updateStars } = props;
+  //const ArtPieceItem = React.forwardRef((props, ref) => {
+  //  const { item, updateStars } = props;
   
 
   return(
-    <div ref = {ref}>
+    <div>
     <div key={item.imageUrl}>
     <div>
       <ImageHeading> {item.name}</ImageHeading> 
@@ -58,6 +58,6 @@ import React, { useRef } from 'react';
   )
 
   
-})
+}
 
 export default ArtPieceItem;

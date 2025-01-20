@@ -11,27 +11,9 @@ import "./category-styles.css";
 export default function Category() {
   
   
- const cellRef = useRef(null); // Create a ref for the grid cell
-  const [cellWidth, setCellWidth] = useState(0); // State to store the width
-
-  useEffect(() => {
-    if (cellRef.current) {
-      // Measure the width of the cell using getBoundingClientRect
-      const width = cellRef.current.getBoundingClientRect().width;
-      setCellWidth(width);
-    }
-
-    // Optional: Update on window resize if grid size is responsive
-    const handleResize = () => {
-      if (cellRef.current) {
-        setCellWidth(cellRef.current.getBoundingClientRect().width);
-      }
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  
+ 
   let flag1 = true
+  //!!!!
   let artPiyArray = [];
   let [showPanel, setShowPanel] = useState(false);
   const route = useParams();
@@ -100,7 +82,7 @@ export default function Category() {
      <>
     <div className="page-container">
      <div className = "artwork-title">Would you like to rate these works?</div>
-      <div>Width: {cellWidth}px</div>
+      <div>Width: 0px</div>
       <ButtonContainer >
         <ButtonShow
           onClick={() => {
@@ -129,7 +111,7 @@ export default function Category() {
           <div  className = "CategoryContainer" >
           {artPiecesOfCategoryArray.map((item, index) => (
           
-          <ArtPieceItem  key = {index} item = {item} updateStars = {updateStars} ref = {cellRef}/>
+          <ArtPieceItem key = {index} item = {item} updateStars = {updateStars}/>
           ))}
           </div>
        

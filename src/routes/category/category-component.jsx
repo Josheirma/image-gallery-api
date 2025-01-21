@@ -85,7 +85,9 @@ export default function Category() {
   
   return (
      <>
+     
     <div className="page-container">
+    <div className =  "banner"> - ArtScape -</div>
      <div className = "artwork-title">Would you like to rate these works?</div>
       <div></div>
       <ButtonContainer >

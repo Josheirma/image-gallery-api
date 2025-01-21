@@ -76,8 +76,8 @@ export const CategoryContainer = styled.div`
 export const Title = styled.div`
 color:blue;
 font-size: 20rem;
-margin-top:90 rem
-margin-bottom: 15 rem;
+margin-top:90rem
+margin-bottom:15 rem;
 align-text:center;
 
 `;

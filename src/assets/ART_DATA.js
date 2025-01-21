@@ -4,7 +4,7 @@ const ART = [
     
     {
       id: 2,
-      name: "Title 1",
+      name: "1",
       imageUrl: require("./4.png"
         
       ),
@@ -23,7 +23,7 @@ const ART = [
   
     {
       id: 4,
-      name: "Title 2",
+      name: "2",
       imageUrl: require("./6.png"),
       price: 10,
       options: [
@@ -39,7 +39,7 @@ const ART = [
     
     {
       id: 3,
-      name: "Title 3",
+      name: "3",
       imageUrl: require("./5.png"),
       price: 10,
       options: [
@@ -55,7 +55,7 @@ const ART = [
     
     {
       id: 7,
-      name: "Title 4",
+      name: "4",
       imageUrl: require("./9.png"),
       price: 10,
       options: [
@@ -70,7 +70,7 @@ const ART = [
     },
     {
       id: 8,
-      name: "Title 5",
+      name: "5",
       imageUrl: require("./10.png"),
       price: 10,
       options: [
@@ -85,7 +85,7 @@ const ART = [
     },
     {
       id: 9,
-      name: "Title 6",
+      name: "6",
       imageUrl: require("./11.png"),
       price: 10,
       options: [
@@ -100,7 +100,7 @@ const ART = [
     },
     {
       id: 10,
-      name: "Title 7",
+      name: "7",
       imageUrl: require("./12.png"),
       price: 10,
       options: [
@@ -115,7 +115,7 @@ const ART = [
     },
     {
       id: 11,
-      name: "Title 8",
+      name: "8",
       imageUrl: require("./13.png"),
       price: 10,
       options: [
@@ -130,7 +130,7 @@ const ART = [
     },
     {
       id: 12,
-      name: "Title 9",
+      name: "9",
       imageUrl: require("./14.png"),
       price: 10,
       options: [
@@ -145,7 +145,7 @@ const ART = [
     },
     {
       id: 13,
-      name: "Title 10",
+      name: "10",
       imageUrl: require("./15.png"),
       price: 10,
       options: [
@@ -160,7 +160,7 @@ const ART = [
     },
     {
       id: 14,
-      name: "Title 11",
+      name: "11",
       imageUrl: require("./16.png"),
       price: 10,
       options: [
@@ -175,7 +175,7 @@ const ART = [
     },
     {
       id: 15,
-      name: "Title 12",
+      name: "12",
       imageUrl: require("./17.png"),
       price: 10,
       options: [
@@ -190,7 +190,7 @@ const ART = [
     },
     {
       id: 16,
-      name: "Title 13",
+      name: "13",
       imageUrl: require("./18.png"),
       price: 10,
       options: [
@@ -206,7 +206,7 @@ const ART = [
     },
     {
       id: 17,
-      name: "Title 14",
+      name: "14",
       imageUrl: require("./19.png"),
       price: 10,
       options: [
@@ -221,7 +221,7 @@ const ART = [
     },
     {
       id: 18,
-      name: "Title 15",
+      name: "15",
       imageUrl: require("./20.png"),
       price: 10,
       options: [
@@ -236,7 +236,7 @@ const ART = [
     },
     {
       id: 19,
-      name: "Title 16",
+      name: "16",
       imageUrl: require("./21.png"),
       price: 10,
       options: [
@@ -251,7 +251,7 @@ const ART = [
     },
     {
       id: 20,
-      name: "Title 17",
+      name: "17",
       imageUrl: require("./22.png"),
       price: 10,
       options: [
@@ -266,7 +266,7 @@ const ART = [
     },
     {
       id: 21,
-      name: "Title 18",
+      name: "18",
       imageUrl: require("./23.png"),
       price: 10,
       options: [

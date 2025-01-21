@@ -2,7 +2,8 @@
 body{
    
     width: 100%;
-    margin: 0%;
+    margin:0%;
+
     
 }
 input{
@@ -15,7 +16,7 @@ input{
 
 
 img {
-   width:100%;
+   width:90%;
     margin:5%;
    
     border: 2px solid black;
@@ -28,7 +29,7 @@ img {
 
 
 
-@media (min-width: 2000px) {
+@media (max-width: 2000px) {
 
     input{
 
@@ -39,23 +40,27 @@ img {
     .image-holder{
         
         width:100%;
-        margin: 0 auto;
-        border: 0%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items:center ;
+        background-color: green;
     }
     img{
         
         width:90%;
         
-        
     }
+}
+    
 
     @media (max-width: 1053px) {
 
+        .image-holder{
+            background-color: blue;
+        }
         input{
+            
        width: .6rem;
        margin: .5rem;
         }
@@ -64,23 +69,51 @@ img {
 
     @media (max-width: 871px) {
 
+        .image-holder{
+        background-color: red;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center ;
+        
+        
+        
+        
+            
+        }
         input{
-            width: .9rem;
-            margin: .9rem;
+            width: .5rem;
+            margin: .5rem;
              }
 
 
     }
 
+    
     @media (max-width: 500px) {
 
+        .image-holder{
+            background-color: purple;
+        }
+
         input{
-        width: .6rem;
-        margin: .7rem
+        width: .5rem;
+        margin: .4rem
         }
     }
 
-    
+    @media (max-width: 385px) {
+    .image-holder{
+
+    width:8rem;
+  
+
 }
+
+
+    }
+
+    
+
 
 

@@ -91,7 +91,7 @@ export default function Category() {
      <>
      
     <div className="page-container">
-    <div className =  "banner"> - ArtScape -</div>
+    <div className =  "banner"> - Image Gallery -</div>
      <div className = "artwork-title">Would you like to rate these works?</div>
       <div></div>
       <ButtonContainer >

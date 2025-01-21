@@ -38,7 +38,7 @@ const ArtPieceItem = ({onWidthChanged, item, updateStars}) => {
 
   return(
     <div>
-     width:{width && divRef.current.offsetWidth}
+    
     <div ref={divRef}  key={item.imageUrl}>
     <div>
       <ImageHeading> {item.name}</ImageHeading> 

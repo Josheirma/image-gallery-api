@@ -31,7 +31,7 @@ export default function Category() {
     (element) => element.amountStarsNumber !=  0
   );
 
-  const [width, setWidth] = useState("")
+  const [theWidth, setWidth] = useState(0)
  
   const handleMessage = (newWidth) => {
     setWidth(newWidth)
@@ -109,7 +109,7 @@ export default function Category() {
       <a href="/">Home</a>
       </div>
       
-      {showPanel && <Panel items = {arrayWithStars}  />}
+      {showPanel && <Panel items = {arrayWithStars}  theWidth = {theWidth}   />}
 
 
      

@@ -40,7 +40,7 @@ const ArtPieceItem = ({onWidthChanged, item, updateStars}) => {
     <div>
     
     <div ref={divRef}  key={item.imageUrl}>
-    <div>
+    <div className = "container">
       <ImageHeading> {item.name}</ImageHeading> 
      
         <div className = "image-holder" >

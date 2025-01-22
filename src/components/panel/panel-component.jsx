@@ -5,10 +5,10 @@ import React, { useState, useEffect} from "react";
 const Panel = ({items, theWidth}) => {
   
   console.log("the Width: ", theWidth)
-  const [height, setHeight] = useState(window.innerHeight * 0.27); // Start with 50% of window height
+  let [height, setHeight] = useState(window.innerHeight * 0.27); // Start with 50% of window height
   let amountOfStars = ""
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const [width, setWidth] = useState(window.innerWidth)
+  let [width, setWidth] = useState(window.innerWidth)
   
 
   useEffect(() => {
@@ -57,13 +57,11 @@ function checkWindowSize() {
       
   }
 }
-/////
-
-
-/////
+//height = 230
+//width = 200
   return (
     
-    <DropDown   style = {{ width: width, height: `${height}px`,}} >
+    <DropDown >
     <div >
     {items && items.map((item) => (
     <div key = {item.id} >

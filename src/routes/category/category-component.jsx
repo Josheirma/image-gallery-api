@@ -39,7 +39,7 @@ export default function Category() {
  
   const handleMessage = (newWidth) => {
     setWidth(newWidth)
-    console.log("logged",newWidth)
+    //console.log("logged",newWidth)
   }
 
   useEffect(() => {

@@ -2,61 +2,9 @@ import { DropDown } from "./panel-styles";
 import './panel-styles.css'
 import React, { useState, useEffect} from "react";
 
-const Panel = ({items, theWidth}) => {
-  
-  console.log("the Width: ", theWidth)
-  let [height, setHeight] = useState(window.innerHeight * 0.27); // Start with 50% of window height
+const Panel = ({items}) => {
   let amountOfStars = ""
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  let [width, setWidth] = useState(window.innerWidth)
-  
-
-  useEffect(() => {
-    const handleResize2 = () => {
-      //if(window.innerWidth < 882){
-        setWidth(200);
-      //}
-      
-    };
-
-    handleResize2()
-  
-    // Add event listener for window resize
-    window.addEventListener('resize', handleResize2);
-  
-    // Cleanup the event listener on component unmount
-    return () => 
-      window.removeEventListener('resize', handleResize2);
-    
-  }, []);
-
-  
-  
-  useEffect(() => {
-    const handleResize = () => {
-      setHeight(230); // Adjust to 50% of the new window height
-    };
-
-    handleResize()
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup on unmount
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  
-/////
-
-  // Function to check window size and update the variable
-function checkWindowSize() {
-  let targetWidth = 997; // Replace with your desired width
-  if (window.innerWidth <= targetWidth) {
-    setHeight(900) ;
-    
-  } else {
-      
-      
-  }
-}
+// Function to check window size and update the variable
 //height = 230
 //width = 200
   return (

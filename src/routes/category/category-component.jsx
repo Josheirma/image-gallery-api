@@ -115,7 +115,7 @@ export default function Category() {
       <a href="/">Home</a>
       </div>
       
-      {showPanel && <Panel items = {arrayWithStars}  theWidth = {theWidth}   />}
+      {showPanel && <Panel items = {arrayWithStars}/>}
 
 
      

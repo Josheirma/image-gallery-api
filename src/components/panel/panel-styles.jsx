@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const DropDown = styled.div`
 font-size:20px;
-background-color:white;
+background-color:yellow;
 z-index: 2;
 overflow-y:scroll;
 border:20rem;

@@ -114,20 +114,25 @@ export default function Category() {
       <div className="artwork-link">
       <a href="/">Home</a>
       </div>
+
       
+      <div className = "upperGrid">
       {showPanel && <Panel items = {arrayWithStars}/>}
+      </div>
 
 
+      <div className = "grid" >
      
      
       
-          <div  className = "CategoryContainer" >
+         
           {artPiecesOfCategoryArray.map((item, index) => (
           
           <ArtPieceItem onWidthChanged = {handleMessage} key = {index} item = {item} updateStars = {updateStars}/>
           ))}
-          </div>
+          
        
+       </div>
        
 
       

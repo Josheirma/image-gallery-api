@@ -55,7 +55,7 @@ img {
             height:120%;
         }
         .image-holder{
-        background-color: red;
+        
         display: flex;
        
         justify-content: center;
@@ -75,8 +75,10 @@ img {
     @media (max-width: 500px) {
 
         .image-holder{
-            background-color: purple;
-            width:100%;
+           
+            width:90%;
+            margin-left:5%;
+            margin-right:5%;
         }
 
         img{
@@ -92,8 +94,10 @@ img {
         
     .image-holder{
 
-    width:8rem;
-     background-color: orange;   
+    
+     
+    
+       
 
 }
 

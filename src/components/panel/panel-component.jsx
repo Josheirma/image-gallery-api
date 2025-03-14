@@ -10,7 +10,7 @@ const Panel = ({items}) => {
   return (
     
     <DropDown >
-    <div >
+    
     {items && items.map((item) => (
     <div key = {item.id} >
     <p>{item.name}</p>
@@ -20,7 +20,7 @@ const Panel = ({items}) => {
     <p>----</p>
     </div>
     ))}
-    </div>
+    
        </DropDown>
     );
   }

@@ -92,18 +92,18 @@ img {
 
     @media (max-width: 385px) {
         
-    .image-holder{
-
-    
-     
-    
-       
-
-}
-
+   .artwork-title{
+        font-size: 1px;
+   
+        background-color:yellow;
 
     }
-
+    .image-holder{
+        width: 12rem;
+        margin:0%;
+        padding:0%;
+    }
+    }
     
 
 

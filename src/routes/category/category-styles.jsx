@@ -10,7 +10,7 @@ justify-content: center;
 export const ButtonShow = styled.button`
  
 
-font-size: .8rem;
+font-size: .4rem;
 
 @media (min-width: 1080px) {
 font-size:1rem;

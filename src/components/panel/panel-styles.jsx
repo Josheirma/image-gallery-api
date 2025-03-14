@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DropDown = styled.div`
-font-size:20px;
+font-size:10px;
 background-color:yellow;
 z-index: 2;
 overflow-y:scroll;
@@ -61,9 +61,16 @@ padding:0
   background-color: orange;
 }
 
+@media (max-width: 377px) {
+
+
+
+}
+
 @media (max-width: 284px) {
 background-color: red;
 height: 19vh;
+font-size:7px;
 
 }
 

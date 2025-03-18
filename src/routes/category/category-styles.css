@@ -14,7 +14,7 @@ a{
 }
 
 .banner{
-    font-size: 2rem;
+    font-size: 2.25rem;
     text-align: center;
     color:blue;
     padding-top:2rem;
@@ -28,7 +28,7 @@ a{
 }
 
 .artwork-title {
-    font-size:1.5rem;
+    font-size:1.75rem;
     padding-top:.8rem;
     margin-bottom:1rem;
     text-align: center;
@@ -37,11 +37,12 @@ a{
     margin-right:3%;
 }
 
-.artwork-link {
-    font-size:.8rem;
+a {
+    font-size:1rem;
     margin-top:2rem;
     margin-bottom:2rem;
-    text-align: center;
+    display: flex;
+    justify-content: center;
     width:100%;
 }
 .artwork-link-spacing {
@@ -56,18 +57,7 @@ padding-bottom:5rem;
 }
 
 
-.CategoryContainer{
-    display: grid;
-   
-    row-gap: 20px;
-    column-gap: 20px;
-    text-align:center;
-    margin-bottom:5rem;
-    margin-left:2.5rem;
-    margin-right:2.5rem;
-    
-    
-  }
+
 
   .upperGrid{
 
@@ -98,17 +88,16 @@ padding-bottom:5rem;
 
         background-color: white;
     }
+    
+    /*image gallery*/
     .banner{
     
-        font-size: 1.75rem;
+        font-size: 1.875rem;
         margin-bottom:0rem;
         padding-bottom:0rem ;
     
     }
-    .CategoryContainer{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
+    
 
     .upperGrid{
         display: grid;
@@ -126,16 +115,19 @@ padding-bottom:5rem;
         
     }
     
+    /*would you like...*/
     .artwork-title{
     
-        font-size: 1.5rem;
+        background-color: aqua;
+        font-size: 1.75rem;
         margin-top: 0rem;
         padding-top:.8rem ;
     }
     
     a{
-        font-size: .81rem;
+        font-size: .875rem;
     }
+    /*home link*/
     .artwork-link{
          font-size: .81rem;
         margin-bottom: 2rem;
@@ -149,7 +141,7 @@ body{
 }
 .banner{
 
-    font-size: 1.75rem;
+    font-size: 1.875rem;
 
 }
 
@@ -169,28 +161,38 @@ body{
 
 .artwork-title{
 
-    font-size: .8rem;
+    font-size: 1.5rem;
 }
 
 a{
-    font-size: .5rem;
+    font-size: .875rem;
 }
-.artwork-link{
-     font-size: 1rem;
-    margin-bottom: .1rem;
-}
+
 }
 
 
 @media (max-width: 385px) {
 
-    .CategoryContainer{
+    body{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items:center ;
         
     }
+
+
+    .banner{
+
+        font-size: 1.75rem;
+    
+    }
+
+    .artwork-title{
+
+        font-size: 1.5rem;
+    }
+    
 
     .upperGrid{
         display: grid;

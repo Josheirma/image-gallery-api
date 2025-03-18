@@ -19,7 +19,7 @@ grid-column:3;
 @media (max-width: 871px) {
   background-color: red;
   height: 33vh;
-  width: 65%;
+  width: 90%;
 }
 
 @media (max-width: 723px) {
@@ -27,7 +27,6 @@ grid-column:3;
   height: 30vh;
 
   }
-
 
 @media (max-width: 627px) {
 width: 60%;
@@ -53,23 +52,16 @@ padding:0
 
 }
 
-
-
 @media (max-width: 385px) {
   width: 35%;
   height: 22vh;
   background-color: orange;
 }
 
-@media (max-width: 377px) {
-
-
-
-}
-
 @media (max-width: 284px) {
-background-color: red;
-height: 19vh;
+background-color: green;
+width:200px;
+height: 230px;
 font-size:7px;
 
 }

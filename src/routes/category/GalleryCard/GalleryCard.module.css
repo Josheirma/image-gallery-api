@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.image {
+    /* margin: 5%; */
+    border: 2px solid black;
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+}
+
+.starsLabel {
+    font-size: 1rem;
+}

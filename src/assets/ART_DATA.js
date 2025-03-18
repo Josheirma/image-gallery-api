@@ -38,9 +38,9 @@ const ART = [
     },
     
     {
-      id: 3,
+      id: 4,
       name: "3",
-      imageUrl: require("./5.png"),
+      imageUrl: require("./5b.png"),
       price: 10,
       options: [
         { option: "option1", checked: false },

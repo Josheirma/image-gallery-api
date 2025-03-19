@@ -2,14 +2,15 @@
 //
 // worked on max width for site: 4000k, works besides checkboxes, and centering.  Broke other things while doing this, shouldn't take very long to fix.  look at width and height functionality and decide if it is still needed.
 //
-import React, { useState, useEffect, useMemo, useRef} from "react";
-import { CategoryContainer, ButtonShow, ButtonContainer } from "./category-styles.jsx";
+import { React, useState, useEffect, useMemo, useRef} from "react";
+import { CategoryContainer, ButtonShow, ButtonContainer } from "./category-styles";
 import { useParams } from "react-router-dom";
-import { NavLink } from "../navigation/navigation-styles.jsx";
-import { ART } from "../../assets/ART_DATA.js";
+import { NavLink } from "../navigation/navigation-styles";
+import { ART } from "../../assets/ART_DATA";
 import ArtPieceItem from "../../components/art-piece/art-piece-item.jsx";
 import Panel from "../../components/panel/panel-component.jsx";
 import "./category-styles.css";
+import styles from "./category-styles.module.css";
 
 
 export default function Category() {
@@ -112,7 +113,7 @@ export default function Category() {
 
 
           
-      <div className="artwork-link">
+      <div className= "artwork-link">
       <a href="/">Home</a>
       </div>
 

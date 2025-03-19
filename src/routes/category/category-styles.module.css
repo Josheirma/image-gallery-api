@@ -1,12 +1,6 @@
 
 
-@media (max-width: 385px) {
 
-.test{
-
-    background-color:brown
-}
-}
 
 
 body{
@@ -223,3 +217,9 @@ a{
 
 
  */
+
+
+ @media (max-width: 385px) {
+
+    
+    }

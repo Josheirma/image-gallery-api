@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 /// this is for rebase - a commit
+=======
+///
+>>>>>>> b79a9e5 (Commit, working on authentication.)
 // worked on max width for site: 4000k, works besides checkboxes, and centering.  Broke other things while doing this, shouldn't take very long to fix.  look at width and height functionality and decide if it is still needed.
 //
 import { React, useState, useEffect, useMemo, useRef} from "react";

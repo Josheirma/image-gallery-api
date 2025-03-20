@@ -1,4 +1,8 @@
 
+<<<<<<< HEAD
+=======
+////
+>>>>>>> 70225f7 (commit - check this)
 // worked on max width for site: 4000k, works besides checkboxes, and centering.  Broke other things while doing this, shouldn't take very long to fix.  look at width and height functionality and decide if it is still needed.
 ///
 import { React, useState, useEffect, useMemo, useRef} from "react";

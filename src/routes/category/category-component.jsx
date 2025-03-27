@@ -91,9 +91,9 @@ export default function Category() {
   return (
      <>
      
-    <div className="page-container">
-    <div className =  "banner"> - Image Gallery -</div>
-     <div className = "artwork-title">Would you like to rate these works?</div>
+    <div className = {styles.pageContainer}>
+    <div className =  {styles.banner} > - Image Gallery -</div>
+     <div className = {styles.artworktitle}>Would you like to rate these works?</div>
       <div></div>
       <ButtonContainer >
         <ButtonShow
@@ -122,7 +122,7 @@ export default function Category() {
       </div>'
 
 
-      <div className = "grid" >
+      <div className = {styles.grid} >
      
       {artPiecesOfCategoryArray.map((item, index) => (
           

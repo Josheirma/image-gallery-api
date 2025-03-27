@@ -1,6 +1,7 @@
 import "./art-piece-styles.css";
 import { ImageHeading } from "./art-piece-styles.jsx";
 import {useEffect, useLayoutEffect , useRef, useState}from 'react';
+import styles from "./art-piece-styles.module.css";
 //import './CategoryContainer.css'; // Assuming the CSS for the grid layout.
 
 
@@ -44,7 +45,7 @@ const ArtPieceItem = ({onWidthChanged, item, updateStars}) => {
       <ImageHeading> {item.name}</ImageHeading> 
      
         <div className = "image-holder" >
-        <img type="Image" src={item.imageUrl} alt = "Image of Art"   />
+        <img className = {styles.Image} type="Image" src={item.imageUrl} alt = "Image1 of Art"   />
         </div>
         <input
           checked={item.amountStarsNumber >= 1}

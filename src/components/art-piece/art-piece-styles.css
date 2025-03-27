@@ -51,8 +51,8 @@ img {
     }
 
 
-
-  /*See category-styles.css : 871*/
+/*
+  
     @media (max-width: 871px) {
 
         body{
@@ -97,18 +97,42 @@ img {
         }
     }
 
-    @media (max-width: 385px) {
+    */
+    @media (max-width: 350px) {
         
    .container{
         font-size: 1px;
-   
-        background-color:red;
+        background-color:yellow;
+        margin:0rem;
+        padding:0rem;
+        
 
     }
     .image-holder{
-        width: 12rem;
-        margin:0%;
-        padding:0%;
+        
+        margin:0rem;
+        padding:0rem;
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+        
+        
+        
+    }
+    .Image{
+
+        background-color: blue;
+        width:100px;
+        
+       
+    }
+    img{
+
+        
+
+        
+        
     }
     }
     

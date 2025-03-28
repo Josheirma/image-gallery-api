@@ -2,10 +2,13 @@
 
 
 
+html{
 
+    font-size: 16px;
+}
 body{
 
-    min-width: 237px;
+    min-width: 350px;
     max-width: 4000px;
     height:100%;
     width: 100%;
@@ -220,7 +223,26 @@ a{
  ***/
 
 
- @media (max-width: 350px) {
+@media (min-width: 350px) {
 
-    
     }
+@media (min-width: 500px) {
+    html{
+
+            font-size: 17px;
+        }
+
+        body{
+            background-color:yellow;
+        }
+    }
+
+    @media (min-width: 871px) {
+
+        html{
+            font-size:3rem;
+        }
+        body{
+        background-color: green;
+        }
+        }

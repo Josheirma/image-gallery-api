@@ -94,8 +94,10 @@ export default function Category() {
     <div className =  {styles.banner} > - Image Gallery -</div>
      <div className = {styles.artworktitle}>Would you like to rate these works?</div>
       <div></div>
-      <ButtonContainer >
-        <ButtonShow
+      
+      
+      <div className = {styles.ButtonContainer} >
+        <button className = "ButtonShow"
           onClick={() => {
             setShowPanel((showPanel) => !showPanel);
           }}
@@ -106,22 +108,22 @@ export default function Category() {
 
             
             {showPanel ? "Hide Panel" : "Show Panel"}
-        </ButtonShow>
-      </ButtonContainer>
+        </button>
+      </div>
 
 
           
-      <div className= "artwork-link">
+      <div className = {styles.ArtworkLink}>
       <a href="/">Home</a>
       </div>
 
       
-      <div className = "upperGrid">
+      <div className = "UpperGrid">
         {showPanel && <Panel items = {arrayWithStars}/>}
       </div>
 
 
-      <div className = {styles.grid} >
+      <div className = {styles.Grid} >
      
       {artPiecesOfCategoryArray.map((item, index) => (
           

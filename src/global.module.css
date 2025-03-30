@@ -24,6 +24,17 @@ a{
     padding-bottom: .1rem;
 }
 
+.ButtonContainer{
+
+    display: flex;
+    justify-content: center;
+}
+
+.ButtonShow{
+
+    font-size: .5rem;
+}
+
 .page-container{
     width:100%;
     max-width: 2000px;
@@ -44,7 +55,7 @@ a{
     
 }
 
-a {
+.ArtworkLink {
     font-size:.65rem;
     margin-top:.5rem;
    
@@ -60,14 +71,6 @@ a {
 padding-bottom:5rem;
 }
  
-.container{
-        font-size: 1rem;
-        background-color:brown;
-        margin:0rem;
-        padding:0rem;
-        
-
-    }
     .image-holder{
         
         margin:0rem;
@@ -102,6 +105,17 @@ padding-bottom:5rem;
     }
 
 
+    .upperGrid{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .ImageHeading{
+        font-size: .6rem;
+        margin-bottom: .1rem;
+        margin-top: .6rem;
+        text-align: center;
+    }
 
 
 
@@ -148,7 +162,9 @@ html {
         margin-left: 5%;
         margin-right: 5%;
     }
-    .grid{
+    
+
+    .Grid{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         row-gap: 20px;
@@ -158,6 +174,8 @@ html {
         margin-left:2.5%;
         margin-right:2.5%;
     }
+
+
     @media (min-width: 800px) {
         html {
             
@@ -188,6 +206,10 @@ html {
             box-sizing: border-box; 
 
         }
+
+
+        
+
         .Image{
             width:100%
         }

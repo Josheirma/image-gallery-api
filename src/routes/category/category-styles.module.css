@@ -2,7 +2,7 @@
 
 
 
-html{
+/* html{
 
     font-size: 16px;
 }
@@ -88,7 +88,7 @@ padding-bottom:5rem;
     margin-left:2.5%;
     margin-right:2.5%;
    
- }
+ } */
 /*
   @media (max-width: 871px) {
 
@@ -223,7 +223,7 @@ a{
  ***/
 
 
-@media (min-width: 350px) {
+/* @media (min-width: 350px) {
 
     }
 @media (min-width: 500px) {
@@ -245,4 +245,4 @@ a{
         body{
         background-color: green;
         }
-        }
+        } */

@@ -1,8 +1,10 @@
-import "./art-piece-styles.css";
+//import "./art-piece-styles.css";
 import { ImageHeading } from "./art-piece-styles.jsx";
 import {useEffect, useLayoutEffect , useRef, useState}from 'react';
-import styles from "./art-piece-styles.module.css";
+//import styles from "./art-piece-styles.module.css";
 //import './CategoryContainer.css'; // Assuming the CSS for the grid layout.
+//import "../../global.css"
+import styles from "../../global.module.css";
 
 
 
@@ -38,15 +40,17 @@ const ArtPieceItem = ({onWidthChanged, item, updateStars}) => {
   }, []);
 
   return(
-    <div>
+    <div className = {styles.ComponentArtpiece}>
     
     <div ref={divRef}  key={item.imageUrl}>
     <div className = "container">
       <ImageHeading> {item.name}</ImageHeading> 
      
         <div className = "image-holder" >
-        <img className = {styles.Image} type="Image" src={item.imageUrl} alt = "Image1 of Art"   />
+        <img className = {styles.Image} type="Image" src={item.imageUrl} alt = "Image of Art"   />
         </div>
+        
+        <div className = {styles.InputContainer}>
         <input
           checked={item.amountStarsNumber >= 1}
           type={`checkbox`}
@@ -75,7 +79,7 @@ const ArtPieceItem = ({onWidthChanged, item, updateStars}) => {
           
           updateStars(item.id, 4)}
         />
-      
+      </div>
     </div>
     
       

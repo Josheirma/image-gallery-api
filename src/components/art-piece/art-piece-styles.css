@@ -101,8 +101,8 @@ img {
     @media (max-width: 350px) {
         
    .container{
-        font-size: 1px;
-        background-color:yellow;
+        font-size: 1rem;
+        background-color:brown;
         margin:0rem;
         padding:0rem;
         

@@ -8,9 +8,9 @@ import { NavLink } from "../navigation/navigation-styles";
 import { ART } from "../../assets/ART_DATA";
 import ArtPieceItem from "../../components/art-piece/art-piece-item.jsx";
 import Panel from "../../components/panel/panel-component.jsx";
-import "./category-styles.css";
-import styles from "./category-styles.module.css";
-
+//import "./category-styles.css";
+//import styles from "./category-styles.module.css";
+import styles from "../../global.module.css"
 
 export default function Category() {
   
@@ -89,9 +89,8 @@ export default function Category() {
   };
   
   return (
-     <>
-     
-    <div className = {styles.pageContainer}>
+     <div className = {styles.ComponentGui}>
+     <div className = {styles.pageContainer}>
     <div className =  {styles.banner} > - Image Gallery -</div>
      <div className = {styles.artworktitle}>Would you like to rate these works?</div>
       <div></div>
@@ -119,7 +118,7 @@ export default function Category() {
       
       <div className = "upperGrid">
         {showPanel && <Panel items = {arrayWithStars}/>}
-      </div>'
+      </div>
 
 
       <div className = {styles.grid} >
@@ -136,7 +135,7 @@ export default function Category() {
       
     </div>
  
- </>
+ </div>
 
 )
 }

@@ -2,13 +2,20 @@ html {
     font-size: 16px;
 }
 
+
  body{
 
-    min-width: 237px;
-    max-width: 4000px;
-    height:100%;
+    min-width: 350px;
+    max-width: 2000px;
+    
     width: 100%;
-   background-color:beige;
+    background-color:beige;
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;     /* Centers content vertically */
+   
+
+
 }
 
 a{
@@ -118,39 +125,88 @@ padding-bottom:5rem;
     }
 
 
+    .ImageContainer{
+        width: 15rem;
+       
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background-color: aquamarine;
+        
+    }
+   
+    
+    .Text{
+        font-size: .8rem;
+        text-align: center;
+    }
+    
+    .OuterContainer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+        
+    }
+    .PanelContainer{
+    
+    height:300px;
+    margin-top: 1rem;
+    background-color:white;
+    overflow-y: auto;
+    width:15rem;
+    
+    margin-bottom: 3rem;
+    border:2px solid black;
+    
+    
+    }
 
-html {
+    .PanelImage{
+        width:15rem;
+       
+        font-size: 2rem;
+        align-content: center;
+        
+    }
+
+    html {
     font-size: 16px;  
 }
 
 
+
+
 @media (min-width: 350px) {
     html {
-        font-size: 17px;  
+        font-size: 16px;  
     }
 }
 
 
-@media (min-width: 373px) {
+@media (min-width: 406px) {
     html {
-        font-size: 22px;
-    
-     }
-     
-     
-     .Image{
+        font-size: 16px;  
+    }
+    body{
+       
+    }
+
+    .Image{
 
         background-color: blue;
         width:70%;
         margin-left: 15%;
         margin-right: 15%;
     }
+   
 }
+
+
 
 
 @media (min-width: 500px) {
     html {
-        font-size: 22px;
+        font-size: 16px;
     
      }
      
@@ -166,7 +222,7 @@ html {
 
     .Grid{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         row-gap: 20px;
         column-gap: 20px;
         text-align:center;
@@ -175,6 +231,13 @@ html {
         margin-right:2.5%;
     }
 
+    .PanelContainer{
+    
+        height:300px;
+       
+    }
+}
+
 
     @media (min-width: 800px) {
         html {
@@ -182,12 +245,19 @@ html {
             
         }
 
-        .grid{
+        .Grid{
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         }
+        
+        .PanelContainer{
+        height: 300px;
+        }
+    
     }
-    @media (min-width: 1000px) {
+
+
+    @media (min-width: 1198px) {
 
         body{
            
@@ -198,14 +268,24 @@ html {
             align-items: center; 
         }
 
+        .PanelContainer{
+            height: 300px;
+            }
+
         .pageContainer{
             width: 80%; 
             max-width: 1200px;
             margin-left: 10%;
             margin-right: 10%;
             box-sizing: border-box; 
+            
 
         }
+
+        .Grid{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            }
 
 
         
@@ -214,7 +294,7 @@ html {
             width:100%
         }
     }
-}
+
 
 
 

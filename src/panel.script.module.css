@@ -1,0 +1,37 @@
+.ImageContainer{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+}
+.PanelImage{
+    width:90%;
+    background-color: orange;
+    font-size: 2rem;
+    align-content: center;
+}
+
+.Text{
+    font-size: .8rem;
+    text-align: center;
+}
+
+.OuterContainer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.PanelContainer{
+
+height:50vh;
+margin-top: 1rem;
+background-color: white;
+overflow-y: auto;
+width:80%;
+margin-left: 10%;
+margin-right: 10%;
+margin-bottom: 3rem;
+border:2px solid black;
+
+}

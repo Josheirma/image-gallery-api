@@ -1,7 +1,8 @@
-import GalleryCard from "../../routes/category/GalleryCard/GalleryCard";
+//import GalleryCard from "../../routes/category/GalleryCard/GalleryCard";
 import { DropDown } from "./panel-styles";
-import "./panel-styles.css";
+//import "./panel-styles.css";
 import React, { useState, useEffect } from "react";
+import styles from "../../script.module.css"
 
 const Panel = ({ items }) => {
   let amountOfStars = "";
@@ -9,7 +10,8 @@ const Panel = ({ items }) => {
   //height = 230
   //width = 200
   return (
-    <DropDown>
+    <div className = {styles.OuterContainer}>
+    <div className= {styles.PanelContainer} >
       {items &&
         items.map((item) => (
           // <GalleryCard
@@ -18,19 +20,27 @@ const Panel = ({ items }) => {
           //   title={item.name}
           //   price={`$${item.price}.00`}
           // />
+          
+          <div className = {styles.Text}>
           <div key={item.id}>
             <p>{item.name}</p>
+           
+           <div className = {styles.ImageContainer}>
             <img
-              className="panelimage"
+            className = {styles.PanelImage}
+              
               src={item.imageUrl}
-              alt={`Panel Image`}
+              alt={`Panel`}
             />
+           </div>
             <p>${item.price}.00</p>
             <p>{item.amtstars}</p>
             <p>----</p>
           </div>
+          </div>
         ))}
-    </DropDown>
+    </div>
+    </div>
   );
 };
 

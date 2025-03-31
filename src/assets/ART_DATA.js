@@ -38,7 +38,7 @@ const ART = [
     },
     
     {
-      id: 4,
+      id: 5,
       name: "3",
       imageUrl: require("./5b.png"),
       price: 10,

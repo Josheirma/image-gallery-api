@@ -87,8 +87,8 @@ export default function Category() {
   
   return (
      <div className = {styles.ComponentGui}>
-     <div className = {styles.pageContainer}>
-    <div className =  {styles.banner} > - Virginia's Studio Image Gallery -</div>
+     <div className = {styles.PageContainer}>
+    <div className =  {styles.Banner} >  Virginia's Studio Image Gallery </div>
      <div className = {styles.artworktitle}>Would you like to rate these works?</div>
       <div></div>
       

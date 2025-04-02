@@ -1,5 +1,5 @@
 //import GalleryCard from "../../routes/category/GalleryCard/GalleryCard";
-import { DropDown } from "./panel-styles";
+//import { DropDown } from "./panel-styles";
 //import "./panel-styles.css";
 import React, { useState, useEffect } from "react";
 import styles from "../../script.module.css"

@@ -1,3 +1,4 @@
+
 html {
     font-size: 16px;
 }
@@ -21,15 +22,15 @@ html {
 a{
     font-size: .5rem;
     color:black;
+    margin-bottom: .3rem;
+    margin-top: .2rem;
 }
 
-.banner{
-    font-size: 1rem;
-    text-align: center;
-    color:blue;
-    padding-top:1rem;
-    padding-bottom: .1rem;
-}
+
+
+
+
+
 
 .ButtonContainer{
 
@@ -42,15 +43,15 @@ a{
     font-size: .5rem;
 }
 
-.page-container{
+.PageContainer{
     width:100%;
     max-width: 2000px;
     height:100vh;
-
+    
 }
 
 .artworktitle {
-    font-size:.7rem;
+    font-size:.9rem;
     padding-top:.0rem;
     margin-bottom:.7rem;
     width:94%;
@@ -73,23 +74,23 @@ a{
 
 
 
-.page-container{
+.PageContainer{
 
 padding-bottom:5rem;
 }
  
-    .image-holder{
+.image-holder{
         
-        margin:0rem;
-        padding:0rem;
-        display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center ;
-        
-        
-        
-    }
+    margin:0rem;
+    padding:0rem;
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items:center ;
+    
+    
+    
+}
     .Image{
 
         background-color: blue;
@@ -169,9 +170,41 @@ padding-bottom:5rem;
         
     }
 
-    html {
-    font-size: 16px;  
-}
+    
+    .ComponentGui {
+        font-size: 1rem;  
+        
+       
+    }
+    
+    .ComponentArtpiece {
+        font-size: 1rem;  
+        
+        width:100%;
+        
+    }
+    
+    
+
+
+    .InputContainer{
+        
+        display: flex;
+                justify-content: center; 
+                align-items: center; 
+    }
+    
+    
+    
+    .Banner{
+        font-size: 1.2rem;
+        text-align: center;
+        color:blue;
+        padding-top:1rem;
+        padding-bottom: .1rem;
+    }
+
+   
 
 
 
@@ -240,10 +273,7 @@ padding-bottom:5rem;
 
 
     @media (min-width: 800px) {
-        html {
-            
-            
-        }
+       
 
         .Grid{
         display: grid;
@@ -272,7 +302,7 @@ padding-bottom:5rem;
             height: 300px;
             }
 
-        .pageContainer{
+        .PageContainer{
             width: 80%; 
             max-width: 1200px;
             margin-left: 10%;
@@ -300,27 +330,6 @@ padding-bottom:5rem;
 
 
 
-.ComponentGui {
-    font-size: .1rem;  
-    color: rgb(90, 0, 128);
-}
-
-.ComponentArtpiece {
-    font-size: 1rem;  
-    
-    width:100%;
-}
-
-.InputContainer{
-    
-    display: flex;
-            justify-content: center; 
-            align-items: center; 
-}
-.Image{
-
-
-}
 
 
 

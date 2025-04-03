@@ -222,7 +222,48 @@ align-items:center ;
         margin-bottom: .5rem;
     }
 
+
+    .ArtistTitle{
+    margin-top:1rem;
+    margin-bottom:1rem;
+    font-size:2rem;
+    text-align: center;
+    }
    
+    .Artists{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+       
+        
+        
+    }
+
+    .FaceImages{
+
+    }
+
+    .FaceContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        height:  100vh;
+        
+    }
+
+    img {
+        margin-left: 10%;
+        margin-right: 10%;
+        width:80%
+
+       
+
+      }
 
 
 

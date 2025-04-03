@@ -23,7 +23,7 @@ const Panel = ({ items }) => {
           
           <div className = {styles.Text}>
           <div key={item.id}>
-            <p>{item.name}</p>
+            {item.name}
            
            <div className = {styles.ImageContainer}>
             <img
@@ -33,9 +33,9 @@ const Panel = ({ items }) => {
               alt={`Panel`}
             />
            </div>
-            <p>${item.price}.00</p>
-            <p>{item.amtstars}</p>
-            <p>----</p>
+            ${item.price}.00
+            <div>{item.amtstars}</div>
+            <div>----</div>
           </div>
           </div>
         ))}

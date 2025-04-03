@@ -88,13 +88,13 @@ export default function Category() {
   return (
      <div className = {styles.ComponentGui}>
      <div className = {styles.PageContainer}>
-    <div className =  {styles.Banner} >  Virginia's Studio Image Gallery </div>
-     <div className = {styles.artworktitle}>Would you like to rate these works?</div>
+    <h1 className = {styles.Banner}>Image Gallery </h1>
+     <h2 className = {styles.artworktitle} >Would you like to rate these works?</h2>
       <div></div>
       
       
       <div className = {styles.ButtonContainer} >
-        <button className = "ButtonShow"
+        <button className = {styles.ButtonShow}
           onClick={() => {
             setShowPanel((showPanel) => !showPanel);
           }}

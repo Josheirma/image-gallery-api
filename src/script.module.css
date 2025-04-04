@@ -278,6 +278,7 @@ align-items:center ;
         column-gap: 20px;
         text-align:center;
         margin-bottom:5rem;
+        width:95%;
         margin-left:2.5%;
         margin-right:2.5%;
     }
@@ -312,6 +313,8 @@ align-items:center ;
 
     @media (min-width: 1198px) {
 
+        
+
         html{
             
             font-size: 22px;
@@ -320,11 +323,14 @@ align-items:center ;
 
         body{
            
-            height: 100%; 
-            margin: 0;    
+            
+            width:100%;
+            
             display: flex; 
             justify-content: center; 
-            align-items: center; 
+            align-items: center;
+            margin: 0%;    
+            padding: 0%; 
         }
 
         .PanelContainer{
@@ -332,11 +338,11 @@ align-items:center ;
             }
 
         .PageContainer{
-            width: 80%; 
+            width: 100%; 
             max-width: 1200px;
-            margin-left: 10%;
-            margin-right: 10%;
-            box-sizing: border-box; 
+            margin-left: 0%;
+            margin-right: 0%;
+            
             
 
         }
@@ -344,7 +350,17 @@ align-items:center ;
         .Grid{
             display: grid;
             grid-template-columns: repeat(4, 1fr);
+           
+        
+        
+        margin-bottom:5rem;
+        width:90%;
+        margin: 5%;
+        padding: 0%;
+       
             }
+
+            
 
 
         

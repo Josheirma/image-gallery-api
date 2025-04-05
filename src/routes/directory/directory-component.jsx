@@ -1,5 +1,12 @@
 import Images from "../../components/images/images-component";
+<<<<<<< HEAD
 import styles from "../../script.module.css"
+=======
+import { DirectoryContainer } from "./directory-styles";
+//import './directory-styles.css';
+import styles from "../../script.module.css";
+
+>>>>>>> fixModuleCSS
 
 const categories = [
   {
@@ -36,15 +43,28 @@ const categories = [
 
 const Directory = () => {
   return (
+<<<<<<< HEAD
     <div className = {styles.FaceContainer} >
       <div className = {styles.ArtistTitle} >
         Select an Artist
       </div> 
       <div className = {styles.Artists}>
+=======
+    <div className = {styles.ArtistsContainer}>
+      <div>
+      <div className = {styles.ArtistTitle} >
+        Select an Artist
+      </div> 
+      <div className = {styles.ImagesContainer}>
+>>>>>>> fixModuleCSS
         {categories.map((category) => (
           <Images key={category.imageUrl} category={category} />
         ))}
       </div>
+<<<<<<< HEAD
+=======
+    </div>
+>>>>>>> fixModuleCSS
     </div>
   );
 };

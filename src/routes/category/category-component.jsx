@@ -120,15 +120,15 @@ export default function Category() {
       </div>
 
 
+       <div className = {styles.GridContainer}> 
       <div className = {styles.Grid} >
-     
       {artPiecesOfCategoryArray.map((item, index) => (
           
           <ArtPieceItem onWidthChanged = {handleMessage} key = {index} item = {item} updateStars = {updateStars}/>
-          ))}
-          
-       
-       </div>
+          ))
+      }
+      </div>
+      </div>
        
 
       

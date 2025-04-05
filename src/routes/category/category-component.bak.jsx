@@ -120,8 +120,8 @@ export default function Category() {
       
       <DropdownPanel showPanel={showPanel} arrayWithStars={arrayWithStars}/>
 
-
-      <div className = "grid" >
+      <div className = {styles.GridContainer}>
+      <div className = {styles.grid} >
      
       {artPiecesOfCategoryArray.map((item, index) => (
           
@@ -133,6 +133,7 @@ export default function Category() {
        
 
       
+    </div>
     </div>
  
  </>

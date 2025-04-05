@@ -1,6 +1,8 @@
 import Images from "../../components/images/images-component";
 import { DirectoryContainer } from "./directory-styles";
-import './directory-styles.css'
+//import './directory-styles.css';
+import styles from "../../script.module.css";
+
 
 const categories = [
   {
@@ -37,15 +39,17 @@ const categories = [
 
 const Directory = () => {
   return (
-    <div>
-      <div className = "ArtistTitle" >
+    <div className = {styles.ArtistsContainer}>
+      <div>
+      <div className = {styles.ArtistTitle} >
         Select an Artist
       </div> 
-      <DirectoryContainer>
+      <div className = {styles.ImagesContainer}>
         {categories.map((category) => (
           <Images key={category.imageUrl} category={category} />
         ))}
-      </DirectoryContainer>
+      </div>
+    </div>
     </div>
   );
 };

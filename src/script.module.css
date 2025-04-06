@@ -99,7 +99,7 @@ h2{
     text-align: center;
     font-size: 2rem;
 }
-.artworktitle {
+.ArtworkTitle {
     
     padding-top:.0rem;
     margin-top: 0rem;
@@ -175,7 +175,7 @@ align-items:center ;
     }
 
 
-    .upperGrid{
+    .UpperGrid{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }

@@ -89,7 +89,7 @@ export default function Category() {
      <div className = {styles.ComponentGui}>
      <div className = {styles.PageContainer}>
     <h1 className = {styles.Banner}>Image Gallery </h1>
-     <h2 className = {styles.artworktitle} >Would you like to rate these works?</h2>
+     <h2 className = {styles.ArtworkTitle} >Would you like to rate these works?</h2>
       <div></div>
       
       
@@ -115,7 +115,7 @@ export default function Category() {
       </div>
 
       
-      <div className = "UpperGrid">
+      <div className = {styles.UpperGrid}>
         {showPanel && <Panel items = {arrayWithStars}/>}
       </div>
 

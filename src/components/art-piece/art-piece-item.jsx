@@ -1,21 +1,14 @@
-//import "./art-piece-styles.css";
 import {useEffect, useLayoutEffect , useRef, useState}from 'react';
-//import styles from "./art-piece-styles.module.css";
-//import './CategoryContainer.css'; // Assuming the CSS for the grid layout.
-//import "../../global.css"
 import styles from "../../script.module.css";
 
 
 
 const ArtPieceItem = ({onWidthChanged, item, updateStars}) => {
-//const ArtPieceItem = React.forwardRef(({ item, updateStars }, ref)) => {
-  //const ArtPieceItem = React.forwardRef((props, ref) => {
-  //  const { item, updateStars } = props;
   const divRef = useRef(null);
   const [width, setWidth] = useState(0);
 
   const sendWidth = (msg) => {
-  //const msg = "a"
+  
   onWidthChanged(msg);
   }
  
@@ -26,7 +19,7 @@ const ArtPieceItem = ({onWidthChanged, item, updateStars}) => {
 
 
   useEffect(() => {
-  //sendWidth()
+  
   console.log("here")
   // Attach the event listener
   window.addEventListener("resize", sendWidth);

@@ -1,15 +1,16 @@
-import {useEffect, useLayoutEffect , useRef, useState}from 'react';
+import {useEffect, useLayoutEffect , useRef}from 'react';
 import styles from "../../script.module.css";
 
 
-
-const ArtPieceItem = ({onWidthChanged, item, updateStars}) => {
-  const divRef = useRef(null);
-  const [width, setWidth] = useState(0);
+//const ArtPieceItem = ({onWidthChanged, item, updateStars}) => {
+const ArtPieceItem = ({item, updateStars}) => {
+const divRef = useRef(null);
+//const [width, setWidth] = useState(0);
 
   const sendWidth = (msg) => {
   
-  onWidthChanged(msg);
+  //onWidthChanged(msg);
+  
   }
  
   useLayoutEffect(() => {

@@ -240,12 +240,7 @@ align-items:center ;
        
     }
     
-    .ComponentArtpiece {
-       
-        
-    }
-    
-    
+   
 
 
     .InputContainer{
@@ -266,7 +261,6 @@ align-items:center ;
         margin-bottom: .5rem;
     }
 
-<<<<<<< HEAD
 
     .ArtistTitle{
     margin-top:1rem;
@@ -274,7 +268,7 @@ align-items:center ;
     font-size:2rem;
     text-align: center;
     }
-=======
+
     .GridContainer{
 
         display:flex;
@@ -284,7 +278,7 @@ align-items:center ;
     
     }
 
->>>>>>> fixModuleCSS
+
    
     .Artists{
         display: flex;
@@ -298,9 +292,7 @@ align-items:center ;
         
     }
 
-    .FaceImages{
-
-    }
+    
 
     .FaceContainer{
         display: flex;
@@ -335,9 +327,7 @@ align-items:center ;
     html {
         font-size: 17px;  
     }
-    body{
-       
-    }
+    
 
     .Image{
 

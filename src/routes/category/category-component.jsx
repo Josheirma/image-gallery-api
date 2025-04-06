@@ -1,9 +1,8 @@
 
 // worked on max width for site: 4000k, works besides checkboxes, and centering.  Broke other things while doing this, shouldn't take very long to fix.  look at width and height functionality and decide if it is still needed.
 ////////
-import { React, useState, useEffect, useMemo, useRef} from "react";
+import { React, useState, useEffect, useMemo} from "react";
 import { useParams } from "react-router-dom";
-import { NavLink } from "../navigation/navigation-styles";
 import { ART } from "../../assets/ART_DATA";
 import ArtPieceItem from "../../components/art-piece/art-piece-item.jsx";
 import Panel from "../../components/panel/panel-component.jsx";
@@ -11,11 +10,7 @@ import styles from "../../script.module.css"
 
 export default function Category() {
   
-  
  
-  let flag1 = true
-  //!!!!!
-  let artPiyArray = [];
   let [showPanel, setShowPanel] = useState(false);
   const route = useParams();
   let imageCategoryToShow = route.category;
@@ -30,15 +25,18 @@ export default function Category() {
   } , [products, imageCategoryToShow])
  
   let arrayWithStars  = products.filter(
-    (element) => element.amountStarsNumber !=  0
+    (element) => element.amountStarsNumber !==  0
   );
 
-  const [theWidth, setWidth] = useState(0)
+
+  // //??????
+  // //const [theWidth, setWidth] = useState(0)
+  // const [newWidth, setWidth] = useState(0)
  
-  const handleMessage = (newWidth) => {
-    setWidth(newWidth)
-    //console.log("logged",newWidth)
-  }
+  // const handleMessage = (width) => {
+  //   setWidth(width)
+  //   //console.log("logged",newWidth)
+  // }
 
   useEffect(() => {
     // get any products in locals torage for both products and panel - just on first render
@@ -123,8 +121,8 @@ export default function Category() {
        <div className = {styles.GridContainer}> 
       <div className = {styles.Grid} >
       {artPiecesOfCategoryArray.map((item, index) => (
-          
-          <ArtPieceItem onWidthChanged = {handleMessage} key = {index} item = {item} updateStars = {updateStars}/>
+          //<ArtPieceItem onWidthChanged = {handleMessage} key = {index} item = {item} updateStars = {updateStars}/>
+          <ArtPieceItem  key = {index} item = {item} updateStars = {updateStars}/>
           ))
       }
       </div>

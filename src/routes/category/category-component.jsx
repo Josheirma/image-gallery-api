@@ -15,9 +15,15 @@ export default function Category() {
   const route = useParams();
   let imageCategoryToShow = route.category;
   //sets products to art, amountstars2 is zero, and string is none
-  let [products, setProducts] = useState(ART);
-  //MEMOIZE  - only if products or imagecate...
+  //let [products, setProducts] = useState(ART);
+
+  const [products, setProducts] = useState(() => {
+    const storedValue = localStorage.getItem('key');
+    return storedValue !== null ? JSON.parse(storedValue) : ART;
+  });
+
   
+  //MEMOIZE  - only if products or imagecate...
   let artPiecesOfCategoryArray = useMemo( () => {
     return products.filter((element) => element.category === imageCategoryToShow
     );
@@ -28,31 +34,8 @@ export default function Category() {
     (element) => element.amountStarsNumber !==  0
   );
 
-
-  // //??????
-  // //const [theWidth, setWidth] = useState(0)
-  // const [newWidth, setWidth] = useState(0)
- 
-  // const handleMessage = (width) => {
-  //   setWidth(width)
-  //   //console.log("logged",newWidth)
-  // }
-
-  useEffect(() => {
-    // get any products in locals torage for both products and panel - just on first render
-    const productsArrayStored = JSON.parse(localStorage.getItem("products"));
-   
-    if (productsArrayStored) {
-      setProducts(productsArrayStored);
-    }
-    
-  }, []);
-
-
-  
-
+  //Old version, mutates...
   // const updateStars = (id, amtStars) => {
-
   //   let updatedarrayOfProducts = products.map((artPieces) => {
   //     if (artPieces.id === id) {
   //       if (artPieces.amountStarsNumber === amtStars) {
@@ -115,6 +98,7 @@ export default function Category() {
     // Optionally update localStorage
     localStorage.setItem("products", JSON.stringify(updatedArrayOfProducts));
   };
+
 
 
 

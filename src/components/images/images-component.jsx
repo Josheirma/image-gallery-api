@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import styles from "../../script.module.css"
+import styles from "./images.module.css"
 
 const Images = ({ category }) => {
   let { imageUrl, route } = category;

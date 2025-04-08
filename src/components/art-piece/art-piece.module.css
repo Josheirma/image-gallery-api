@@ -1,0 +1,140 @@
+.ArtistTitle{
+    margin-top:1rem;
+    margin-bottom:1rem;
+    font-size:2rem;
+    text-align: center;
+    }
+
+    
+    .Artists{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+       
+        
+        
+    }
+
+
+    .InputContainer{
+        
+        display: flex;
+                justify-content: center; 
+                align-items: center; 
+    }
+    
+
+
+    
+
+@media (min-width: 350px) {
+    html {
+        font-size: 16px;  
+    }
+}
+
+
+@media (min-width: 406px) {
+    html {
+        font-size: 17px;  
+    }
+    
+
+    .Image{
+
+        
+        width:70%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+   
+}
+
+
+
+
+@media (min-width: 500px) {
+    html {
+        font-size: 18px;
+    
+     }
+     
+     
+     .Image{
+
+       
+        width:80%;
+        margin:0%;
+    }
+    
+
+    
+
+    
+
+    
+}
+
+
+    @media (min-width: 800px) {
+       
+        html{
+            
+            font-size: 20px;
+           
+        }
+
+        
+        
+        
+
+        .Image{
+            width:100%;
+            background-color: rgb(198, 192, 255);
+            margin: 0%;
+            padding:0%;
+
+        }
+    
+    }
+
+
+    @media (min-width: 1198px) {
+
+        
+
+        
+        html{
+            
+            font-size: 22px;
+           
+        }
+
+        body{
+           
+            
+            width:100%;
+            
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            margin: 0%;    
+            padding: 0%; 
+            
+        }
+
+        
+
+        
+        
+
+            .Image{
+            width:100%;
+            margin: 0%;
+            padding: 0%;
+        }
+
+    }

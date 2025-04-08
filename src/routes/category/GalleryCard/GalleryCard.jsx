@@ -1,13 +1,22 @@
 import React from "react";
-import styles from "./GalleryCard.module.css";
+//import styles from "./GalleryCard.module.css";
+import styles from "../../../script.module.css"
 
-export default function GalleryCard({ title, imageUrl, starsLabel, price }) {
+export default function GalleryCard({ title, imageUrl, starsLabel, price, key }) {
   return (
-    <div className={styles.container}>
+    <div className={styles.Text}>
+       <div key={key}>
       <p className={styles.title}>{title}</p>
-      <img src={imageUrl} alt="gallery image" className={styles.image} />
+
+      <div className = {styles.ImageContainer}>
+      <img src={imageUrl} alt="gallery" className={styles.PanelImage} />
+      </div>
+      
       <p>{price}</p>
-      <section className={styles.starsLabel}>{starsLabel}</section>
+      <section>{starsLabel}</section>
+      <div>----</div>
     </div>
+    </div>
+    
   );
 }

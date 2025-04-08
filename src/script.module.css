@@ -262,13 +262,6 @@ align-items:center ;
     }
 
 
-    .ArtistTitle{
-    margin-top:1rem;
-    margin-bottom:1rem;
-    font-size:2rem;
-    text-align: center;
-    }
-
     .GridContainer{
 
         display:flex;
@@ -279,7 +272,15 @@ align-items:center ;
     }
 
 
-   
+    /*
+    .ArtistTitle{
+    margin-top:1rem;
+    margin-bottom:1rem;
+    font-size:2rem;
+    text-align: center;
+    }
+
+    
     .Artists{
         display: flex;
         justify-content: center;
@@ -291,6 +292,7 @@ align-items:center ;
         
         
     }
+        */
 
     
 

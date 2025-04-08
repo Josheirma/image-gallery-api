@@ -1,6 +1,6 @@
 import Images from "../../components/images/images-component";
 
-import styles from "../../script.module.css"
+import styles from "./directory-component.module.css"
 
 const categories = [
   {

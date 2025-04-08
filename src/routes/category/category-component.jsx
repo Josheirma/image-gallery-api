@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { ART } from "../../assets/ART_DATA";
 import ArtPieceItem from "../../components/art-piece/art-piece-item.jsx";
 import Panel from "../../components/panel/panel-component.jsx";
-import styles from "../../script.module.css"
+import styles from "../../routes/category/category-component.module.css"
 
 export default function Category() {
   

@@ -1,5 +1,5 @@
 import {useEffect, useLayoutEffect , useRef}from 'react';
-import styles from "../../script.module.css";
+import styles from "../art-piece/art-piece.module.css";
 
 
 //const ArtPieceItem = ({onWidthChanged, item, updateStars}) => {

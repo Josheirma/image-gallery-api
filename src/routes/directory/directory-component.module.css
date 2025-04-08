@@ -1,0 +1,22 @@
+.ArtistsContainer{
+
+    height:80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.ArtistTitle{
+
+    font-size: 2.5rem;
+    text-align: center;
+   
+}
+
+.ImagesContainer{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin: 2rem;;
+    
+  }

@@ -1,22 +1,30 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.Text{
+    font-size: 2rem;
+    text-align: center;
+    
 }
+
+.ImageContainer{
+    width: 15rem;
+   
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+    
+}
+
+.PanelImage{
+    width:15rem;
+   
+    font-size: 2rem;
+    align-content: center;
+    
+}
+
 
 .title {
     font-weight: bold;
     margin-bottom: 0.25rem;
 }
 
-.image {
-    /* margin: 5%; */
-    border: 2px solid black;
-    width: 10rem;
-    height: 10rem;
-    object-fit: cover;
-}
-
-.starsLabel {
-    font-size: 1rem;
-}

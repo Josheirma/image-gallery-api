@@ -40,7 +40,7 @@ const divRef = useRef(null);
       <div className = {styles.ImageHeading}> {item.name}</div> 
      
         <div className = "image-holder" >
-        <img className = {styles.Image} type="Image" src={item.imageUrl} alt = "Image of Art"   />
+        <img className = {styles.Image} type="Image" src={item.imageUrl} alt = "Artwork"   />
         </div>
         
         <div className = {styles.InputContainer}>

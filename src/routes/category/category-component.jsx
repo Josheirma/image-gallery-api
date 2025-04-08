@@ -15,9 +15,15 @@ export default function Category() {
   const route = useParams();
   let imageCategoryToShow = route.category;
   //sets products to art, amountstars2 is zero, and string is none
-  let [products, setProducts] = useState(ART);
-  //MEMOIZE  - only if products or imagecate...
+  //let [products, setProducts] = useState(ART);
+
+  const [products, setProducts] = useState(() => {
+    const storedValue = localStorage.getItem('key');
+    return storedValue !== null ? JSON.parse(storedValue) : ART;
+  });
+
   
+  //MEMOIZE  - only if products or imagecate...
   let artPiecesOfCategoryArray = useMemo( () => {
     return products.filter((element) => element.category === imageCategoryToShow
     );
@@ -28,60 +34,74 @@ export default function Category() {
     (element) => element.amountStarsNumber !==  0
   );
 
-
-  // //??????
-  // //const [theWidth, setWidth] = useState(0)
-  // const [newWidth, setWidth] = useState(0)
- 
-  // const handleMessage = (width) => {
-  //   setWidth(width)
-  //   //console.log("logged",newWidth)
-  // }
-
-  useEffect(() => {
-    // get any products in locals torage for both products and panel - just on first render
-    const productsArrayStored = JSON.parse(localStorage.getItem("products"));
+  //Old version, mutates...
+  // const updateStars = (id, amtStars) => {
+  //   let updatedarrayOfProducts = products.map((artPieces) => {
+  //     if (artPieces.id === id) {
+  //       if (artPieces.amountStarsNumber === amtStars) {
+  //         artPieces.amountStarsNumber = 0;
+  //         artPieces.amtstars = "none"
+  //       } else {
+  //         artPieces.amountStarsNumber = amtStars;
+  //        if(amtStars === 1){
+          
+  //           artPieces.amtstars = "One Check"
+  //         }
+  //         if(amtStars === 2){
+  //           artPieces.amtstars = "Two Checks"
+  //         }
+  //         if(amtStars === 3){
+  //           artPieces.amtstars = "Three Checks"
+  //         }
+  //         if(amtStars === 4){
+  //           artPieces.amtstars = "Four Checks"
+  //         }
+  //       }
+      
+  //     }
+  //     return(artPieces)
+  //   });
+  //   setProducts(updatedarrayOfProducts);
    
-    if (productsArrayStored) {
-      setProducts(productsArrayStored);
-    }
-    
-  }, []);
-
-
-  /////
+  //     localStorage.setItem(`products`, JSON.stringify(updatedarrayOfProducts));
+  // };
 
   const updateStars = (id, amtStars) => {
-
-    let updatedarrayOfProducts = products.map((artPieces) => {
-      if (artPieces.id === id) {
-        if (artPieces.amountStarsNumber === amtStars) {
-          artPieces.amountStarsNumber = 0;
-          artPieces.amtstars = "none"
-        } else {
-          artPieces.amountStarsNumber = amtStars;
-         if(amtStars === 1){
-          
-            artPieces.amtstars = "One Check"
-          }
-          if(amtStars === 2){
-            artPieces.amtstars = "Two Checks"
-          }
-          if(amtStars === 3){
-            artPieces.amtstars = "Three Checks"
-          }
-          if(amtStars === 4){
-            artPieces.amtstars = "Four Checks"
-          }
-        }
-      
-      }
-      return(artPieces)
+    // Create a new array with the updated products
+    const updatedArrayOfProducts = products.map((artPiece) => {
+      if (artPiece.id !== id) return artPiece; // Return unchanged item if not the target
+  
+      // If the amountStarsNumber is the same as amtStars, reset to 0 (like toggle)
+      const isSame = artPiece.amountStarsNumber === amtStars;
+      const newAmountStarsNumber = isSame ? 0 : amtStars;
+  
+      // Map numeric stars to string labels
+      const starsLabelMap = {
+        0: "none",
+        1: "One Check",
+        2: "Two Checks",
+        3: "Three Checks",
+        4: "Four Checks"
+      };
+  
+      // Return a new object (avoid mutation)
+      return {
+        ...artPiece,
+        amountStarsNumber: newAmountStarsNumber,
+        amtstars: starsLabelMap[newAmountStarsNumber] // Update amtstars
+      };
     });
-    setProducts(updatedarrayOfProducts);
-   
-      localStorage.setItem(`products`, JSON.stringify(updatedarrayOfProducts));
+  
+    // Update state with the new array
+    setProducts(updatedArrayOfProducts);
+  
+    // Optionally update localStorage
+    localStorage.setItem("products", JSON.stringify(updatedArrayOfProducts));
   };
+
+
+
+
   
   return (
      <div className = {styles.ComponentGui}>

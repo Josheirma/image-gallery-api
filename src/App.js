@@ -4,6 +4,7 @@ import "./App.css";
 import Navigation from "./routes/navigation/navigation-component";
 import Category from "./routes/category/category-component";
 import Directory from "./routes/directory/directory-component"
+import "./global.css"
 
 const App = () => {
  return (

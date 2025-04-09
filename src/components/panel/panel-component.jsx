@@ -5,6 +5,7 @@ import styles from "../../../src/script.module.css"
 
 const Panel = ({ items }) => {
   let amountOfStars = "";
+  console.log("stars: ", items)
   // Function to check window size and update the variable
   //height = 230
   //width = 200
@@ -18,6 +19,7 @@ const Panel = ({ items }) => {
             imageUrl={item.imageUrl}
             title={item.name}
             price={`$${item.price}.00`}
+            starsLabel = {item.amtstars}
           />
           
         ))}

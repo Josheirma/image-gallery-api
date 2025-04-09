@@ -1,0 +1,21 @@
+html {
+    font-size: 16px;
+    
+    
+}
+
+
+ body{
+
+    min-width: 350px;
+    max-width: 2000px;
+    
+    width: 100%;
+    background-color:beige;
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;     /* Centers content vertically */
+    
+    
+
+}

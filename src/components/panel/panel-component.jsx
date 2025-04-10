@@ -1,7 +1,8 @@
 import GalleryCard from "../../routes/category/GalleryCard/GalleryCard.jsx";
 //import { DropDown } from "./panel-styles";
 import React, { useState, useEffect } from "react";
-import styles from "../../../src/script.module.css"
+//import styles from "../../../src/script.module.css"
+import styles from "./panel.script.module.css"
 
 const Panel = ({ items }) => {
   let amountOfStars = "";

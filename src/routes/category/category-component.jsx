@@ -18,7 +18,7 @@ export default function Category() {
   //let [products, setProducts] = useState(ART);
 
   const [products, setProducts] = useState(() => {
-    const storedValue = localStorage.getItem('key');
+    const storedValue = localStorage.getItem('products');
     return storedValue !== null ? JSON.parse(storedValue) : ART;
   });
 

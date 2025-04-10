@@ -39,7 +39,7 @@ const divRef = useRef(null);
     <div className = {styles.ContainerForCard}>
       <div className = {styles.ImageHeading}> {item.name}</div> 
      
-        <div className = "image-holder" >
+        <div className = {styles.ImageHolder} >
         <img className = {styles.Image} type="Image" src={item.imageUrl} alt = "Artwork"   />
         </div>
         

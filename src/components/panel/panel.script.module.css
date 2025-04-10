@@ -24,14 +24,23 @@
 }
 .PanelContainer{
 
-height:50vh;
+height:350px;
 margin-top: 1rem;
 background-color: white;
 overflow-y: auto;
-width:80%;
+width:15rem;
 margin-left: 10%;
 margin-right: 10%;
 margin-bottom: 3rem;
 border:2px solid black;
+
+}
+
+@media (min-width: 1198px) {
+
+    .PanelContainer{
+        
+        
+    }
 
 }

@@ -5,9 +5,11 @@ import Navigation from "./routes/navigation/navigation-component";
 import Category from "./routes/category/category-component";
 import Directory from "./routes/directory/directory-component"
 import "./global.css"
+import  {UserProvider}  from "./context";
 
 const App = () => {
  return (
+  <UserProvider>
     <div className="App">
       <Routes>
           <Route path="/" element={<Navigation />}>
@@ -16,6 +18,7 @@ const App = () => {
           </Route>
         </Routes>
      </div>
+     </UserProvider>  
   );
 };
 export default App;

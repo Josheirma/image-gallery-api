@@ -42,7 +42,7 @@ const divRef = useRef(null);
     <div ref={divRef}  key={item.imageUrl}>
     <div className = {styles.ContainerForCard}>
       <div className = {styles.ImageHeading}> {item.name}</div> 
-      <div className = {styles.ImageHeading}> {item.price}</div> 
+      <div className = {styles.ImageHeading}> ${item.price}.00</div> 
         <div className = {styles.ImageHolder} >
         
        

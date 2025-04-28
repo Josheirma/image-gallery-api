@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import "../../global.css"
 import styles from "./images.module.css"
 
 const Images = ({ category }) => {

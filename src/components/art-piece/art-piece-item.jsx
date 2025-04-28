@@ -1,4 +1,5 @@
 import {useEffect, useLayoutEffect , useRef}from 'react';
+import "../../global.css"
 import styles from "../art-piece/art-piece.module.css";
 //import artistImage from '../../assets/artist1.jpg'; 
 

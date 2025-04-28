@@ -1,5 +1,6 @@
+
 html {
-    font-size: 16px;
+    font-size: 16px; 
     
     
 }
@@ -8,10 +9,10 @@ html {
  body{
 
     min-width: 350px;
-    max-width: 2000px;
+    max-width: 8000px;
     
     width: 100%;
-    background-color:beige;
+   
     display: flex;
     justify-content: center; /* Centers content horizontally */
     align-items: center;     /* Centers content vertically */

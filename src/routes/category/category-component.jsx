@@ -1,38 +1,49 @@
-
+// if arraywithstars was a usestate variable could keep track of all products with star
 // worked on max width for site: 4000k, works besides checkboxes, and centering.  Broke other things while doing this, shouldn't take very long to fix.  look at width and height functionality and decide if it is still needed.
 ////////
-import { React, useState, useEffect, useMemo} from "react";
+import { React, useState, useEffect, useMemo, useContext} from "react";
 import { useParams } from "react-router-dom";
-import { ART } from "../../assets/ART_DATA";
+//import { ART } from "../../assets/ART_DATA";
 import ArtPieceItem from "../../components/art-piece/art-piece-item.jsx";
 import Panel from "../../components/panel/panel-component.jsx";
 import styles from "../../routes/category/category-component.module.css"
+import {UserContext} from "../../context.js"
 
 export default function Category() {
   
- 
+
+  const ART = useContext(UserContext);
+  console.log("art")
   let [showPanel, setShowPanel] = useState(false);
   const route = useParams();
   let imageCategoryToShow = route.category;
-  //sets products to art, amountstars2 is zero, and string is none
-  //let [products, setProducts] = useState(ART);
-
-  const [products, setProducts] = useState(() => {
+  
+const [products, setProducts] = useState(() => {
     const storedValue = localStorage.getItem('products');
     return storedValue !== null ? JSON.parse(storedValue) : ART;
-  });
+  })
 
-  
+    let artPiecesOfCategoryArray = []
   //MEMOIZE  - only if products or imagecate...
-  let artPiecesOfCategoryArray = useMemo( () => {
+  console.log("apc: ", products)
+  artPiecesOfCategoryArray = useMemo( () => {
     return products.filter((element) => element.category === imageCategoryToShow
     );
   
   } , [products, imageCategoryToShow])
+
+
+
+
  
+ console.log("product: ", products)
   let arrayWithStars  = products.filter(
     (element) => element.amountStarsNumber !==  0
   );
+
+  console.log("aws: ", arrayWithStars)
+ 
+  console.log("array with starts:", arrayWithStars)
 
   //Old version, mutates...
   // const updateStars = (id, amtStars) => {
@@ -92,9 +103,13 @@ export default function Category() {
       };
     });
   
+    console.log("UAP: ", updatedArrayOfProducts)
+    console.log("prodA: ", products)
     // Update state with the new array
     setProducts(updatedArrayOfProducts);
   
+    console.log("UAP: ", updatedArrayOfProducts)
+    console.log("prodA: ", products)
     // Optionally update localStorage
     localStorage.setItem("products", JSON.stringify(updatedArrayOfProducts));
   };
@@ -102,7 +117,7 @@ export default function Category() {
 
 
 
-  
+  console.log("art2: ", artPiecesOfCategoryArray)
   return (
      <div className = {styles.ComponentGui}>
      <div className = {styles.PageContainer}>
@@ -140,7 +155,9 @@ export default function Category() {
 
        <div className = {styles.GridContainer}> 
       <div className = {styles.Grid} >
+      
       {artPiecesOfCategoryArray.map((item, index) => (
+          
           //<ArtPieceItem onWidthChanged = {handleMessage} key = {index} item = {item} updateStars = {updateStars}/>
           <ArtPieceItem  key = {index} item = {item} updateStars = {updateStars}/>
           ))

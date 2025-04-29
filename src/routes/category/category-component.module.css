@@ -131,16 +131,10 @@ align-items:center ;
         font-size: 16px;  
     }
 }
-
-
 @media (min-width: 406px) {
     :global(html) {
         font-size: 17px;  
     }
-    
-
-    
-   
 }
 
 

@@ -20,8 +20,8 @@ export const UserProvider = ({ children }) => {
   
 
   return (
-    //@
-    //renders everything between provider in 
+    
+    //renders everything between <Userprovider> in  App.js : what children means 
     <UserContext.Provider value={user}>
       {children}
     </UserContext.Provider>

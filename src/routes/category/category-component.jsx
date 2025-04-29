@@ -22,7 +22,6 @@ const [products, setProducts] = useState(() => {
 
     let artPiecesOfCategoryArray = []
   //MEMOIZE  - only if products or imageCategoryToShow changes
-  //@
   artPiecesOfCategoryArray = useMemo( () => {
     return products.filter((element) => element.category === imageCategoryToShow
     );

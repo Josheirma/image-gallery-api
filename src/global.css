@@ -1,5 +1,5 @@
 
-/* @ this is used by default, otherwise if overruled, use the global:(<value>) in components module.css style file  */
+/*this is used by default, otherwise if overruled, use the global:(<value>){html}{} in components module.css style file  */
 html {
     font-size: 16px; 
     

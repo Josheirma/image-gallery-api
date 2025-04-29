@@ -1,14 +1,10 @@
 import {useEffect, useLayoutEffect , useRef}from 'react';
 import "../../global.css"
 import styles from "../art-piece/art-piece.module.css";
-//import artistImage from '../../assets/artist1.jpg'; 
 
-//const ArtPieceItem = ({onWidthChanged, item, updateStars}) => {
 const ArtPieceItem = ({item, updateStars}) => {
   console.log("art5: ", item)
-  //let imageUrl = "/assets/1.png"
-  //let name = "A"
-  //console.log("item: ", item.imageUrl)
+  
 const divRef = useRef(null);
 //const [width, setWidth] = useState(0);
 

@@ -1,14 +1,7 @@
-//const express = ("express");
-//const cors = ("cors");
 import express from 'express';
 import cors from 'cors';
 
 const app = express();
-
-// export const data = [
-//   { name: "John Doe", id: 1 },
-//   { name: "John Doe2", id: 2 },
-// ];
 
 export const data = [
 {
@@ -293,7 +286,7 @@ export const data = [
 
 
 
-    //////
+    
 
 ]
 
@@ -304,10 +297,6 @@ app.use(express.json());
 app.get("/api", (req, res) => {
   res.json(data)
 });
-
-// app.get('/api', (req, res) => {
-//   res.json({data1 : "hello, there from server" });
-// });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

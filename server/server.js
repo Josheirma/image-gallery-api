@@ -3,6 +3,9 @@ import cors from 'cors';
 
 const app = express();
 
+
+
+//key is id, so make sure no duplicates
 export const data = [
 {
   id: 2,

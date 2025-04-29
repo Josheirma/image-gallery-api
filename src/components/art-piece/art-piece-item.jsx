@@ -3,40 +3,16 @@ import "../../global.css"
 import styles from "../art-piece/art-piece.module.css";
 
 const ArtPieceItem = ({item, updateStars}) => {
-  console.log("art5: ", item)
   
-const divRef = useRef(null);
-//const [width, setWidth] = useState(0);
-
-  const sendWidth = (msg) => {
   
-  //onWidthChanged(msg);
+
+
   
-  }
- 
-  useLayoutEffect(() => {
-    console.log("1")
-    sendWidth(divRef.current.offsetWidth);
-  });
-
-
-  useEffect(() => {
-  
-  console.log("here")
-  // Attach the event listener
-  window.addEventListener("resize", sendWidth);
-
-  // Cleanup: Remove the event listener on component unmount
-  return () => {
-    window.removeEventListener("resize", sendWidth);
-  };
-
-  }, []);
 
   return(
     <div className = {styles.ComponentArtpiece}>
     
-    <div ref={divRef}  key={item.imageUrl}>
+    <div key={item.id}>
     <div className = {styles.ContainerForCard}>
       <div className = {styles.ImageHeading}> {item.name}</div> 
       <div className = {styles.ImageHeading}> ${item.price}.00</div> 
@@ -46,6 +22,8 @@ const divRef = useRef(null);
         <img className = {styles.Image} src={item.imageUrl} alt = "Artwork"   />
         </div>
         
+
+        {/*check boxes work like a star rating */}
         <div className = {styles.InputContainer}>
         <input
           checked={item.amountStarsNumber >= 1}

@@ -2,6 +2,8 @@ import Images from "../../components/images/images-component";
 import "../../global.css"
 import styles from "./directory-component.module.css"
 
+
+//holds artist for startup display
 const categories = [
   {
     id: 2,

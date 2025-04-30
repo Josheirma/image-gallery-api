@@ -5,7 +5,7 @@ import Panel from "../../components/panel/panel-component.jsx";
 import "../../global.css"
 import styles from "../../routes/category/category-component.module.css"
 import {UserContext} from "../../context.js"
-
+//
 export default function Category() {
   
 

@@ -1,22 +1,15 @@
-
+/*this is used by default, otherwise if overruled, use the global:(<value>){html}{} in components module.css style file  */
 html {
-    font-size: 16px; 
-    
-    
+  font-size: 16px;
 }
 
+body {
+  min-width: 350px;
+  max-width: 8000px;
 
- body{
+  width: 100%;
 
-    min-width: 350px;
-    max-width: 8000px;
-    
-    width: 100%;
-   
-    display: flex;
-    justify-content: center; /* Centers content horizontally */
-    align-items: center;     /* Centers content vertically */
-    
-    
-
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
 }

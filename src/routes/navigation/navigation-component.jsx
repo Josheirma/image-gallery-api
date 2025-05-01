@@ -1,12 +1,9 @@
-import { Outlet} from "react-router-dom";
-import { NavigationContainer} from "./navigation-styles";
-
+import { Outlet } from "react-router-dom";
 
 const Navigation = () => {
- return (
-    <NavigationContainer>
-       <Outlet />
-    </NavigationContainer>
+  return (
+    //Outlet is where child routes in router code (App.js) of <navigation/> go
+    <Outlet />
   );
 };
 export default Navigation;

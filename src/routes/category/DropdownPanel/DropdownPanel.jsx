@@ -1,6 +1,7 @@
 import React from "react";
 import Panel from "../../../components/panel/panel-component.jsx";
-import styles from  './DropdownPanel.module.css';
+import "../../global.css";
+import styles from "./DropdownPanel.module.css";
 
 export default function DropdownPanel({ showPanel, arrayWithStars }) {
   if (!showPanel) {

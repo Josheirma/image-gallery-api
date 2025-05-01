@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import React from "react";
-import "./App.css";
 import Navigation from "./routes/navigation/navigation-component";
 import Category from "./routes/category/category-component";
 import Directory from "./routes/directory/directory-component"

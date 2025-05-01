@@ -1,6 +1,6 @@
 .container {
-    display: flex;
-    align-items: flex-end;
-    width: 260px;
-    margin: 2rem;
+  display: flex;
+  align-items: flex-end;
+  width: 260px;
+  margin: 2rem;
 }

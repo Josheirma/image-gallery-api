@@ -11,14 +11,14 @@ const ArtPieceItem = ({item, updateStars}) => {
   return(
     <div className = {styles.ComponentArtpiece}>
     
-    <div key={item.id}>
+    
     <div className = {styles.ContainerForCard}>
       <div className = {styles.ImageHeading}> {item.name}</div> 
       <div className = {styles.ImageHeading}> ${item.price}.00</div> 
         <div className = {styles.ImageHolder} >
         
        
-        <img className = {styles.Image} src={item.imageUrl} alt = "Artwork"   />
+        <img className = {styles.Image} src={item.imageUrl} alt = {item.name}   />
         </div>
         
 
@@ -57,7 +57,7 @@ const ArtPieceItem = ({item, updateStars}) => {
     
       
     
-       </div>
+       
        </div>
   )
 

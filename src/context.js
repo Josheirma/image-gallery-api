@@ -1,9 +1,9 @@
 import React, { createContext, useState, useEffect } from "react";
 
-export const UserContext = createContext([]);
+export const ArtContext = createContext([]);
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState([]);
+  const [artpiece, setArtpiece] = useState([]);
 
   //fetches from included express server
   useEffect(() => {
@@ -11,7 +11,7 @@ export const UserProvider = ({ children }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched data:", data);  // <-- see what you got
-        setUser(data);
+        setArtpiece(data);
         
       })
       .catch((error) => console.error("Error fetching data:", error));
@@ -22,8 +22,8 @@ export const UserProvider = ({ children }) => {
   return (
     
     //renders everything between <Userprovider> in  App.js : what children means 
-    <UserContext.Provider value={user}>
+    <ArtContext.Provider value={artpiece}>
       {children}
-    </UserContext.Provider>
+    </ArtContext.Provider>
   );
 }

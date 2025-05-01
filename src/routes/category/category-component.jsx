@@ -5,12 +5,12 @@ import ArtPieceItem from "../../components/art-piece/art-piece-item.jsx";
 import Panel from "../../components/panel/panel-component.jsx";
 import "../../global.css"
 import styles from "../../routes/category/category-component.module.css"
-import {UserContext} from "../../context.js"
+import {ArtContext} from "../../context.js"
 //
 export default function Category() {
   
 
-  const ART = useContext(UserContext);
+  const ART = useContext(ArtContext);
   
   let [showPanel, setShowPanel] = useState(false);
   const route = useParams();
@@ -121,10 +121,10 @@ const [products, setProducts] = useState(() => {
        <div className = {styles.GridContainer}> 
       <div className = {styles.Grid} >
       
-      {artPiecesOfCategoryArray.map((item, index) => (
+      {artPiecesOfCategoryArray.map((item) => (
           
           
-          <ArtPieceItem  key = {index} item = {item} updateStars = {updateStars}/>
+          <ArtPieceItem  key = {item.id} item = {item} updateStars = {updateStars}/>
           ))
       }
       </div>

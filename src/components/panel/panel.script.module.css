@@ -24,7 +24,7 @@
 }
 .PanelContainer{
 
-height:300px;
+height:400px;
 margin-top: 1rem;
 background-color: white;
 overflow-y: auto;
@@ -39,7 +39,7 @@ border:2px solid black;
 @media (min-width: 2564px) {
 
     .PanelContainer{
-        height:500px;
+        height:550px;
         
     }
 

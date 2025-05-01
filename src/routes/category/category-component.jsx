@@ -1,4 +1,5 @@
-import { React, useState, useMemo, useContext} from "react";
+//removed console.logs and checked for wrongfully deleted code - none. 
+import { React, useState, useEffect, useMemo, useContext} from "react";
 import { useParams } from "react-router-dom";
 import ArtPieceItem from "../../components/art-piece/art-piece-item.jsx";
 import Panel from "../../components/panel/panel-component.jsx";
@@ -20,9 +21,15 @@ const [products, setProducts] = useState(() => {
     return storedValue !== null ? JSON.parse(storedValue) : ART;
   })
 
-    let artPiecesOfCategoryArray = []
+  useEffect(() => {
+  if (!localStorage.getItem('products') && ART) {
+    setProducts(ART);
+  }
+}, [ART]);
+
+    
   //MEMOIZE  - only if products or imageCategoryToShow changes
-  artPiecesOfCategoryArray = useMemo( () => {
+  let artPiecesOfCategoryArray = useMemo( () => {
     return products.filter((element) => element.category === imageCategoryToShow
     );
   

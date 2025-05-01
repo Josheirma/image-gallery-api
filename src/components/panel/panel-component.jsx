@@ -1,5 +1,5 @@
 import GalleryCard from "../../routes/category/GalleryCard/GalleryCard.jsx";
-import React, { useState, useEffect } from "react";
+
 import "../../global.css"
 import styles from "./panel.script.module.css"
 

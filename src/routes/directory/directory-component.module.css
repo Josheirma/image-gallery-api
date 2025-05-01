@@ -1,63 +1,38 @@
-
-
-
 .OuterContainer {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-    
-  }
-
-.ArtistsContainer{
-
-    height:100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    
-}
-.ArtistTitle{
-
-    
-    text-align: center;
-    font-size: 2.5rem;
-   
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.ImagesContainer{
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
-    margin: 2rem;
-    
+.ArtistsContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ArtistTitle {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.ImagesContainer {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+@media (min-width: 2560px) {
+  :global(html) {
+    font-size: 30px;
   }
+}
 
-  @media (min-width: 2560px) {
-    
-      :global(html){
-
-        font-size: 30px;
-        
-      }
-
-      
-      
-      
-      
-    }
-    
-  
-    /* @media (min-width: 3000px) {
+/* @media (min-width: 3000px) {
       :global(html) {
         
         font-size: 19px;  
       }} */
-  
-
-  
-

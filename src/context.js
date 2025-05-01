@@ -10,20 +10,14 @@ export const UserProvider = ({ children }) => {
     fetch("http://localhost:5000/api")
       .then((res) => res.json())
       .then((data) => {
-        console.log("Fetched data:", data);  // <-- see what you got
+        console.log("Fetched data:", data); // <-- see what you got
         setArtpiece(data);
-        
       })
       .catch((error) => console.error("Error fetching data:", error));
-  
-    }, []);
-  
+  }, []);
 
   return (
-    
-    //renders everything between <Userprovider> in  App.js : what children means 
-    <ArtContext.Provider value={artpiece}>
-      {children}
-    </ArtContext.Provider>
+    //renders everything between <Userprovider> in  App.js : what children means
+    <ArtContext.Provider value={artpiece}>{children}</ArtContext.Provider>
   );
-}
+};

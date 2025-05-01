@@ -1,255 +1,154 @@
-
-
-/*
-
-//moved to app.js
-
-html {
-    font-size: 16px;
-    
-    
-}
-
-
- body{
-
-    min-width: 350px;
-    max-width: 2000px;
-    
-    width: 100%;
-    background-color:beige;
-    display: flex;
-    justify-content: center; 
-    align-items: center;  
-    
-    
-
-}
-
-*/
 .ArtworkTitle {
-    
-    padding-top:.0rem;
-    margin-top: 0rem;
-    margin-bottom:.4rem;
-    width:94%;
-    margin-left:3%;
-    margin-right:3%;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    
+  padding-top: 0rem;
+  margin-top: 0rem;
+  margin-bottom: 0.4rem;
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-a{
-    font-size: 1.25rem;
-    color:black;
-    margin-bottom: 0rem;
-    margin-top: .2rem;
+a {
+  font-size: 1.25rem;
+  color: black;
+  margin-bottom: 0rem;
+  margin-top: 0.2rem;
 }
 
-
-
-
-
-
-
-.ButtonContainer{
-
-    display: flex;
-    justify-content: center;
+.ButtonContainer {
+  display: flex;
+  justify-content: center;
 }
 
-.ButtonShow{
-
-    font-size: 1.25rem;
-    margin-top: 2rem;
-    
+.ButtonShow {
+  font-size: 1.25rem;
+  margin-top: 2rem;
 }
 
-.PageContainer{
-    width:100%;
-    max-width: 2000px;
-    height:100vh;
-    
+.PageContainer {
+  width: 100%;
+  max-width: 2000px;
+  height: 100vh;
 }
 
-h1{
-    color: blue;
-    text-align: center;
-    font-size: 2.5rem;
+h1 {
+  color: blue;
+  text-align: center;
+  font-size: 2.5rem;
 }
 
-h2{
-    text-align: center;
-    font-size: 2rem;
+h2 {
+  text-align: center;
+  font-size: 2rem;
 }
 
-.UpperGrid{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+.UpperGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
 }
 
 .ComponentGui {
-    font-size: 1rem;  
-    
-   
+  font-size: 1rem;
 }
 
-.Banner{
-        
-    text-align: center;
-    
-    padding-top:0rem;
-    padding-bottom: 0rem;
-    margin-bottom: .5rem;
+.Banner {
+  text-align: center;
+
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  margin-bottom: 0.5rem;
 }
 
 .ArtworkLink {
-    font-size:.65rem;
-    margin-top:.5rem;
-   
-    display: flex;
-    justify-content: center;
-    width:100%;
+  font-size: 0.65rem;
+  margin-top: 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-
-.GridContainer{
-
-    display:flex;
-flex-direction: row;
-justify-content: center;
-align-items:center ;
-
+.GridContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-
-
 
 @media (min-width: 350px) {
-    :global(html) {
-        font-size: 16px;  
-    }
+  :global(html) {
+    font-size: 16px;
+  }
 }
 @media (min-width: 406px) {
-    :global(html) {
-        font-size: 17px;  
-    }
+  :global(html) {
+    font-size: 17px;
+  }
 }
-
-
-
-
 
 @media (min-width: 700px) {
-    :global(html) {
-        font-size: 18px;
-    
-     }
-     
-     
-     
-    
+  :global(html) {
+    font-size: 18px;
+  }
 
-    .Grid{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 2rem;
-        column-gap: 2rem;
-        text-align:center;
-        margin-bottom:5rem;
-        width:100%;
-        margin-left:5%;
-        margin-right:5%;
-        
-    }
-
-    
-
-    
+  .Grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+    column-gap: 2rem;
+    text-align: center;
+    margin-bottom: 5rem;
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
 
+@media (min-width: 940px) {
+  :global(html) {
+    font-size: 20px;
+  }
 
-    @media (min-width: 940px) {
-       
-        
-        :global(html) {
-            
-            font-size: 20px;
-           
-        }
+  .Grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
-        .Grid{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        
-        }
-        
-        
+@media (min-width: 1198px) {
+  :global(html) {
+    font-size: 22px;
+  }
 
-        
-    
-    }
+  :global(body) {
+    width: 100%;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+    padding: 0%;
+  }
 
-    @media (min-width: 1198px) {
+  .PageContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
 
-        
+  .Grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 
-        
-        :global(html) {
-            
-            font-size: 22px;
-           
-        }
-
-        :global(body) {
-           
-            
-            width:100%;
-            
-            display: flex; 
-            justify-content: center; 
-            align-items: center;
-            margin: 0%;    
-            padding: 0%; 
-            
-        }
-
-        
-
-        .PageContainer{
-            width: 100%; 
-            max-width: 1200px;
-            margin-left: 0%;
-            margin-right: 0%;
-            
-            
-
-        }
-
-        
-        .Grid{
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            
-            row-gap: 20px;
-            column-gap: 20px;
-            text-align:center;
-            margin-bottom:5rem;
-            width:100%;
-            margin-left:0%;
-            margin-right:0%;
-        
-       
-       
-            }
-
-    }
-
-
-
-
-
-
-
+    row-gap: 20px;
+    column-gap: 20px;
+    text-align: center;
+    margin-bottom: 5rem;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+}

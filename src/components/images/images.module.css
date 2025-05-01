@@ -1,18 +1,13 @@
-.ArtistImage{
-    max-width: 100%;
-     height: auto;
-     flex: 1;              
-     object-fit: cover;
-    }
+.ArtistImage {
+  max-width: 100%;
+  height: auto;
+  flex: 1;
+  object-fit: cover;
+}
 
-    
-      @media (min-width: 2560px) {
-
-        .ArtistImage{
-        width: 350px;
-         height: 400px;
-        }
-      
-    }
-
-   
+@media (min-width: 2560px) {
+  .ArtistImage {
+    width: 350px;
+    height: 400px;
+  }
+}

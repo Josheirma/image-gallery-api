@@ -1,4 +1,4 @@
-import { React, useState, useEffect, useMemo, useContext} from "react";
+import { React, useState, useMemo, useContext} from "react";
 import { useParams } from "react-router-dom";
 import ArtPieceItem from "../../components/art-piece/art-piece-item.jsx";
 import Panel from "../../components/panel/panel-component.jsx";

@@ -14,6 +14,7 @@ const ArtPieceItem = ({ item, updateStars }) => {
         {/*check boxes work like a star rating */}
         <div className={styles.InputContainer}>
           <input
+          //check the box if there are enough checks
             checked={item.amountStarsNumber >= 1}
             type={`checkbox`}
             onChange={() => updateStars(item.id, 1)}

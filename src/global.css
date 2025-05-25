@@ -1,4 +1,7 @@
-/*this is used by default, otherwise if overruled, use the global:(<value>){html}{} in components module.css style file  */
+/*// This style is used by default. 
+// If overridden, the component will use the global: (<value>){ html, body } defined in the module.css file.
+// This allows component-specific styles to fall back to or override global styles applied to the html and body elements. */
+
 html {
   font-size: 16px;
 }
@@ -10,6 +13,8 @@ body {
   width: 100%;
 
   display: flex;
-  justify-content: center; /* Centers content horizontally */
-  align-items: center; /* Centers content vertically */
+  /*centers content horizontally */
+  justify-content: center;
+  /* Centers content vertically */ 
+  align-items: center; 
 }

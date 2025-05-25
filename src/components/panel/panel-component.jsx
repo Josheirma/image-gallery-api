@@ -10,6 +10,7 @@ const Panel = ({ items }) => {
       <div className={styles.PanelContainer}>
         {items &&
           items.map((item) => (
+            //seperate cards in panel
             <GalleryCard
               key={item.id}
               imageUrl={item.imageUrl}

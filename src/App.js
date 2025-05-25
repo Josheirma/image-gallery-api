@@ -9,6 +9,7 @@ import  {UserProvider}  from "./context";
 const App = () => {
  return (
   <UserProvider>
+    {/* // Nested routes (indented) will render inside this component using the <Outlet /> */}
     <div className="App">
       <Routes>
           <Route path="/" element={<Navigation />}>

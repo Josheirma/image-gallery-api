@@ -2,7 +2,7 @@ import React from "react";
 import "../../../global.css";
 import styles from "./GalleryCard.module.css";
 
-//for panel
+//for panel - seperat cards
 export default function GalleryCard({ title, imageUrl, starsLabel, price }) {
   return (
     <div className={styles.Text}>

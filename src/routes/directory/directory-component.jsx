@@ -2,7 +2,14 @@ import Images from "../../components/images/images-component";
 import "../../global.css";
 import styles from "./directory-component.module.css";
 
-//holds artist for startup display
+// Server runs on port 5000 (from the /server directory):
+//   cd server
+//   node server.js
+//
+// The client application runs on port 3000 and should be started from the root directory:
+//   npm start
+
+//holds artist for startup display, artwork uses a server and API
 const categories = [
   {
     id: 2,
@@ -36,6 +43,7 @@ const categories = [
   },
 ];
 
+/* // Displays a screen with artists so users can view their work */
 const Directory = () => {
   return (
     <div className={styles.OuterContainer}>

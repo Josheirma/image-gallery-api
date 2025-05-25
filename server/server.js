@@ -1,9 +1,17 @@
+// This is the Express server.
+// Make sure to run it before starting the application.
+// Usage in terminal:
+//    cd server
+//    node server.js
+
+
 import express from "express";
 import cors from "cors";
 
 const app = express();
 
 //key is id, so make sure no duplicates
+//this is data stored on server
 export const data = [
   {
     id: 2,
@@ -283,6 +291,7 @@ export const data = [
   },
 ];
 
+// Another application runs on port 3000; use `npm start` to launch it
 console.log("data2: ", data);
 
 app.use(cors());

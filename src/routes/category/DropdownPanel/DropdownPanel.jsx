@@ -7,7 +7,7 @@ export default function DropdownPanel({ showPanel, arrayWithStars }) {
   if (!showPanel) {
     return null;
   }
-
+  //drops up and down on button press
   return (
     <div className={styles.container}>
       <Panel items={arrayWithStars} />

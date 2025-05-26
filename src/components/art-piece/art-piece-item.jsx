@@ -11,10 +11,10 @@ const ArtPieceItem = ({ item, updateStars }) => {
           <img className={styles.Image} src={item.imageUrl} alt={item.name} />
         </div>
 
-        {/*check boxes work like a star rating */}
+        {/*Checkboxes styled and behave like a star rating system*/}
         <div className={styles.InputContainer}>
           <input
-          //check the box if there are enough checks
+          // If the variable is greater than or equal to the required number of checks, update the checkboxes
             checked={item.amountStarsNumber >= 1}
             type={`checkbox`}
             onChange={() => updateStars(item.id, 1)}

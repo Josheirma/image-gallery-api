@@ -1,4 +1,4 @@
-//Complete - prettified 5/1/25
+//Complete - 5/26/25
 import { React, useState, useEffect, useMemo, useContext } from "react";
 import { useParams } from "react-router-dom";
 import ArtPieceItem from "../../components/art-piece/art-piece-item.jsx";
@@ -8,56 +8,56 @@ import styles from "../../routes/category/category-component.module.css";
 import { ArtContext } from "../../context.js";
 //
 export default function Category() {
-  //sets a variable to the object array context
+   // Sets ART to the context-provided array of artwork objects
   const ART = useContext(ArtContext);
 
   let [showPanel, setShowPanel] = useState(false);
-  // 'route' is an object from React Router containing URL parameters.
-  // In this case, it holds the 'category' value from the URL path like: /category/:category
-  // For example, if the URL is /category/hats, then route.category === "hats"
-
+  // 'route' holds URL parameters like: /category/:category
+  // e.g., if URL is /category/artist1, then route.category === "artist1"
   const route = useParams();
-  //every time there is a reroute, remounting occurs  
+  // Triggers a remount on route change
   let imageCategoryToShow = route.category;
 
   
   const [products, setProducts] = useState(() => {
     const storedValue = localStorage.getItem("products");
-    //intialize products with ART (default value) array of objects if the value is null, otherwise get the entire array from localstorage.  Localstorage has the value amtstars, which can be changed.
+    // Initialize 'products' from localStorage if available; otherwise, use ART (default)
+    // Stored items include star ratings, which can be modified
     return storedValue !== null ? JSON.parse(storedValue) : ART;
   });
 
   useEffect(() => {
-    //local storage has been deleted, so reinitialize with art (All amtstars are 0.)
+    // If localStorage has been cleared, reset products to ART (default star values)
     if (!localStorage.getItem("products") && ART) {
       setProducts(ART);
     }
   }, [ART]);
 
-  //MEMOIZE  - only if products or imageCategoryToShow changes
+  // Memoize filtered artwork list based on selected category
+  // Only recalculates if 'products' or 'imageCategoryToShow' changes
   let artPiecesOfCategoryArray = useMemo(() => {
     return products.filter(
-      // Filter a new array (non-mutating) to include only items matching the route param.  Remounted when using react router.  Memoize works by only doing internals if oner of the two dependencies is changed.
-      (element) => element.category === imageCategoryToShow
+        // Create a filtered (non-mutating) array of items matching the current route's category
+        // Memoized to recompute only when 'products' or 'imageCategoryToShow' changes
+         (element) => element.category === imageCategoryToShow
     );
   }, [products, imageCategoryToShow]);
 
-  //created to pass to panel, below.  Just stars!
+  // Extract artwork with any non-zero star rating — passed to <Panel />
   let arrayWithStars = products.filter(
     (element) => element.amountStarsNumber !== 0
   );
 
   const updateStars = (id, amtStars) => {
-   // Create a single-item array that holds the entire arrray of objects
-   // artPiece is in scope for the entire function body
+   // Updates the star rating of a specific artwork
     const updatedArrayOfProducts = products.map((artPiece) => {
       if (artPiece.id !== id) return artPiece; 
 
-      // If the amountStarsNumber is the same as amtStars, reset to 0 (like toggle)
+       // If current rating equals clicked value, reset to 0 (toggle off)
       const isSame = artPiece.amountStarsNumber === amtStars;
       const newAmountStarsNumber = isSame ? 0 : amtStars;
 
-      // Map numeric stars to string labels
+      // Map numeric star values to corresponding label strings
       const starsLabelMap = {
         0: "none",
         1: "One Check",
@@ -66,22 +66,20 @@ export default function Category() {
         4: "Four Checks",
       };
 
-      // Return a new object (avoid mutation)
-      //creates a single valued array that has objects
+      // Return updated artwork object with new star number and label
      
       return {
-         //artPiece is an element of the entire array and is kept.  It updates the amountStarsNumber, and starsLabelMap over top the element, too.
-        ...artPiece,
-        //number stars
+        // 'artPiece' represents an item in the array; we keep all its properties and update only 'amountStarsNumber' and 'amtstars'
+         ...artPiece,
+        // Update the numeric star rating
         amountStarsNumber: newAmountStarsNumber,
-        // Sets a string containing the text representation of stars
-        // Update amtstars
+        // Set the text label that matches the new star rating (e.g., "One Check")
         amtstars: starsLabelMap[newAmountStarsNumber], 
       };
     });
 
-    //!
-    // Use state for speed (faster than localStorage get), but it resets on page reload or route change.
+    // Update state with modified product list
+    // (State is faster than localStorage but resets on reload)
     setProducts(updatedArrayOfProducts);
 
       //Update localStorage, in case there is a reroute, and products has been reset.
@@ -103,10 +101,11 @@ export default function Category() {
           <button
             className={styles.ButtonShow}
             onClick={() => {
+              // Toggle the visibility of the panel
               setShowPanel((showPanel) => !showPanel);
             }}
           >
-            {/* // Show text conditionally based on variable's truthy/falsy value */}
+            {/* Show or hide text based on 'showPanel' state */}
             {showPanel ? "Hide Panel" : "Show Panel"}
           </button>
         </div>
@@ -116,13 +115,13 @@ export default function Category() {
         </div>
 
         <div className={styles.UpperGrid}>
-          {/*// Updates on every reroute; contains products that have stars (amountStarsNumber !== 0)*/}
+         {/* Displays artworks that have been rated (non-zero stars) */}
           {showPanel && <Panel items={arrayWithStars} />}
         </div>
 
         <div className={styles.GridContainer}>
           <div className={styles.Grid}>
-              {/*@ // Using the route's category type, display all artworks in that category (filtered at the top) */}
+             {/* Display all artworks in the current category (filtered above) */}
             {artPiecesOfCategoryArray.map((item) => (
                <ArtPieceItem
                 key={item.id}

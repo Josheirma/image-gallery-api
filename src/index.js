@@ -8,6 +8,7 @@ import "../src/global.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  // Wraps application routes with <BrowserRouter> to enable client-side routing
   <React.StrictMode>
     <BrowserRouter>
       <App />

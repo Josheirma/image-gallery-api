@@ -1,6 +1,6 @@
-/*// This style is used by default. 
-// If overridden, the component will use the global: (<value>){ html, body } defined in the module.css file.
-// This allows component-specific styles to fall back to or override global styles applied to the html and body elements. */
+/*This style is used by default. 
+If overridden, the component will use the global: (<value>){ html, body } defined in the module.css file.
+This allows component-specific styles to fall back to or override global styles applied to the html and body elements. */
 
 html {
   font-size: 16px;

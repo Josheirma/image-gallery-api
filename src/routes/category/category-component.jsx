@@ -75,7 +75,8 @@ export default function Category() {
         //number stars
         amountStarsNumber: newAmountStarsNumber,
         // Sets a string containing the text representation of stars
-        amtstars: starsLabelMap[newAmountStarsNumber], // Update amtstars
+        // Update amtstars
+        amtstars: starsLabelMap[newAmountStarsNumber], 
       };
     });
 
